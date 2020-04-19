@@ -1,13 +1,16 @@
 import 'package:example/counter/notifier/counter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
+import 'package:remote_state/remote_state.dart';
 
 class CounterNotifierPage extends StatelessWidget {
   static Route<dynamic> route() => MaterialPageRoute(
         builder: (_) {
           return MultiProvider(
             providers: [
-              ChangeNotifierProvider.value(value: CounterNotifier()),
+              StateNotifierProvider<CounterNotifier, RemoteState<int>>.value(
+                  value: CounterNotifier()),
             ],
             child: CounterNotifierPage(),
           );
@@ -19,9 +22,10 @@ class CounterNotifierPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var counterNotifier = Provider.of<CounterNotifier>(context);
+    var counterState = Provider.of<RemoteState<int>>(context);
 
-    var count = counterNotifier.value
-        .maybeWhen(success: (value) => value, orElse: () => 0);
+    var count =
+        counterState.maybeWhen(success: (value) => value, orElse: () => 0);
     var textStyle = Theme.of(context).textTheme.display4;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
