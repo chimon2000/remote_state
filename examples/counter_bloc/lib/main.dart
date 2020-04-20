@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:remote_state/remote_state.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(ExampleApp());
 
-class MyApp extends StatelessWidget {
+class ExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
             Text(
               'You have pushed the button this many times:',
             ),
-            //3. Efficiently render state changes
+            //3. Render state changes
             BlocBuilder<CounterBloc, RemoteState<int>>(
               builder: (_, state) => state.when(
                 initial: () => Text('Not loaded', style: textStyle),

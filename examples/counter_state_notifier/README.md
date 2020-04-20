@@ -1,4 +1,4 @@
-# example
+# counter_state_notifier
 
 A new Flutter project.
 
