@@ -1,4 +1,4 @@
-name: example_state_notifier
+name: counter_state_notifier
 version: 1.0.0+1
 homepage: https://github.com/chimon2000/remote_state
 author: Ryan Edge <ryan.c.edge@outlook.com>
