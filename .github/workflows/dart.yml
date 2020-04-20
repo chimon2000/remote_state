@@ -10,7 +10,8 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-
+    env:
+      working-directory: ./packages/remote_state
     container:
       image:  google/dart:latest
 
@@ -18,5 +19,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: pub get
+      working-directory: ${{env.working-directory}}
     - name: Run tests
-      run: cd packages/remote_state; pub run test
+      run: pub run test
+      working-directory: ${{env.working-directory}}
