@@ -1,26 +1,23 @@
-name: example
+name: example_state_notifier
 version: 1.0.0+1
 homepage: https://github.com/chimon2000/remote_state
 author: Ryan Edge <ryan.c.edge@outlook.com>
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   provider: ^4.0.5
   state_notifier: ^0.4.0
   flutter_state_notifier: ^0.4.1
-  remote_state:
   flutter:
     sdk: flutter
+  remote_state:
+    path: ../../packages/remote_state
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-dependency_overrides:
-  remote_state:
-    path: ../
 
 flutter:
   uses-material-design: true

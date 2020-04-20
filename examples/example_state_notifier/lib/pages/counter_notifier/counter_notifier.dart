@@ -1,8 +1,9 @@
-import 'package:example/counter/notifier/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:remote_state/remote_state.dart';
+
+import '../../counter/notifier/counter.dart';
 
 class CounterNotifierPage extends StatelessWidget {
   static Route<dynamic> route() => MaterialPageRoute(

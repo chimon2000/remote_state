@@ -154,7 +154,7 @@ packages:
   remote_state:
     dependency: "direct main"
     description:
-      path: ".."
+      path: "../../packages/remote_state"
       relative: true
     source: path
     version: "0.0.1"

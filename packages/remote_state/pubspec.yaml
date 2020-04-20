@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  state_notifier: ^0.4.0
+  flutter_state_notifier: ^0.4.1
   freezed: ^0.10.6
   build_runner: ^1.7.2
   flutter_test:

@@ -1,6 +1,7 @@
-import 'package:example/counter/clients/counter.dart';
 import 'package:remote_state/remote_state.dart';
 import 'package:state_notifier/state_notifier.dart';
+
+import '../clients/counter.dart';
 
 class CounterNotifier extends StateNotifier<RemoteState<int>> {
   var _counterClient = CounterClient();

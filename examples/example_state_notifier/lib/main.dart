@@ -1,6 +1,6 @@
-import 'package:example/pages/counter_notifier/counter_notifier.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
+import 'pages/counter_notifier/counter_notifier.dart';
 
 void main() {
   runApp(ExampleApp());
