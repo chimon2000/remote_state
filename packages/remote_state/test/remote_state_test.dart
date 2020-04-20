@@ -1,5 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
-
+import 'package:test/test.dart';
 import 'package:remote_state/remote_state.dart';
 
 void main() {
