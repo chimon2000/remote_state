@@ -1,5 +1,4 @@
-name: Dart CI
-
+name: Build & test
 on:
   push:
     branches: [ master ]
