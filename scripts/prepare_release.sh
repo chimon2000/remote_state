@@ -16,6 +16,6 @@ do
     cd $workingDirectory
     version=$(pubver bump $version)
     cd -
-    git-chglog --next-tag $version -o CHANGELOG.md
+    git-chglog --next-tag $version -o $workingDirectory/CHANGELOG.md
     exit
 done
