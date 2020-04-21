@@ -1,12 +1,12 @@
 name: remote_state
-version: 0.11.0
+version: 0.14.0
 homepage: https://github.com/chimon2000/remote_state
 description: A new Flutter package project.
-environment:
+environment: 
   sdk: '>=2.1.0 <3.0.0'
-dependencies:
+dependencies: 
   freezed_annotation: ^0.7.1
-dev_dependencies:
+dev_dependencies: 
   build_runner: ^1.7.2
   freezed: ^0.10.6
   state_notifier: ^0.4.0
