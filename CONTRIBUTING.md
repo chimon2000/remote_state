@@ -1,4 +1,4 @@
-# Contributing to Good First Issue
+# Contributing to RemoteState
 
 👍🎉 First off, thanks for taking the time to contribute! 👍🎉
 
