@@ -2,8 +2,14 @@
 ## [Unreleased]
 
 
-<a name="0.14.0"></a>
-## [0.14.0] - 2020-04-21
+<a name="0.15.0"></a>
+## [0.15.0] - 2020-04-21
+### Fixed
+- space in publish.yml
+
+
+<a name="v0.14.0"></a>
+## [v0.14.0] - 2020-04-21
 ### Added
 - git-chglog configuration
 - add script to prepare release
@@ -30,4 +36,5 @@
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.14.0...HEAD
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.15.0...HEAD
+[0.15.0]: https://github.com/chimon2000/remote_state/compare/v0.14.0...0.15.0
