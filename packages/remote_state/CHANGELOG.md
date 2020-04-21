@@ -2,8 +2,14 @@
 ## [Unreleased]
 
 
-<a name="0.15.0"></a>
-## [0.15.0] - 2020-04-21
+<a name="0.16.0"></a>
+## [0.16.0] - 2020-04-21
+### Fixed
+- move changelog and add better package description
+
+
+<a name="v0.15.0"></a>
+## [v0.15.0] - 2020-04-21
 ### Fixed
 - space in publish.yml
 
@@ -36,5 +42,6 @@
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.15.0...HEAD
-[0.15.0]: https://github.com/chimon2000/remote_state/compare/v0.14.0...0.15.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.16.0...HEAD
+[0.16.0]: https://github.com/chimon2000/remote_state/compare/v0.15.0...0.16.0
+[v0.15.0]: https://github.com/chimon2000/remote_state/compare/v0.14.0...v0.15.0
