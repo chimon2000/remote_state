@@ -27,7 +27,7 @@ jobs:
           "refreshToken":"${{ secrets.PUB_REFRESH_TOKEN }}",
           "tokenEndpoint":"${{ secrets.PUB_TOKEN_ENDPOINT }}",
           "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
-          "expiration": ${{ secrets. PUB_EXPIRATION }}
+          "expiration": ${{ secrets.PUB_EXPIRATION }}
         }
         EOF
     - name: Check Publish Warnings
