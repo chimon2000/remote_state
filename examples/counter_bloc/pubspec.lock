@@ -171,7 +171,7 @@ packages:
       path: "../../packages/remote_state"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.16.0"
   rxdart:
     dependency: transitive
     description:
