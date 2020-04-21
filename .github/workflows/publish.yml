@@ -34,5 +34,5 @@ jobs:
       run: pub publish --dry-run
       working-directory: ${{env.working-directory}}
     - name: Publish Package
-      run: pub publish --trace
+      run: pub publish -f
       working-directory: ${{env.working-directory}}
