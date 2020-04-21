@@ -1,5 +1,5 @@
 name: remote_state
-version: 0.16.0
+version: 0.17.0
 homepage: https://github.com/chimon2000/remote_state
 description: Tools for mapping data from remote sources in Dart, similar to Elm's RemoteData.
 environment: 

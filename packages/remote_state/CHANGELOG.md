@@ -2,8 +2,17 @@
 ## [Unreleased]
 
 
-<a name="0.16.0"></a>
-## [0.16.0] - 2020-04-21
+<a name="0.17.0"></a>
+## [0.17.0] - 2020-04-21
+### Added
+- example in packages/remote_state
+
+### Fixed
+- add gitignore to packages/remote_state
+
+
+<a name="v0.16.0"></a>
+## [v0.16.0] - 2020-04-21
 ### Fixed
 - move changelog and add better package description
 
@@ -42,6 +51,7 @@
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.16.0...HEAD
-[0.16.0]: https://github.com/chimon2000/remote_state/compare/v0.15.0...0.16.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.17.0...HEAD
+[0.17.0]: https://github.com/chimon2000/remote_state/compare/v0.16.0...0.17.0
+[v0.16.0]: https://github.com/chimon2000/remote_state/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/chimon2000/remote_state/compare/v0.14.0...v0.15.0
