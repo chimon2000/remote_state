@@ -1,0 +1,38 @@
+name: Publish package to pub.dev
+on:
+  push:
+    tags:
+    - 'v*' 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./packages/remote_state
+    container:
+      image:  google/dart:latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: pub get
+      working-directory: ${{env.working-directory}}
+    - name: Run tests
+      run: pub run test
+      working-directory: ${{env.working-directory}}
+    - name: Setup credentials
+      run: | 
+        mkdir -p ~/.pub-cache 
+        cat <<EOF > ~/.pub-cache/credentials.json
+        {
+          "accessToken":"${{ secrets.PUB_ACCESS_TOKEN }}",
+          "refreshToken":"${{ secrets.PUB_REFRESH_TOKEN }}",
+          "tokenEndpoint":"${{ secrets.PUB_TOKEN_ENDPOINT }}",
+          "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+          "expiration": ${{ secrets. PUB_EXPIRATION }}
+        }
+        EOF
+    - name: Check Publish Warnings
+      run: pub publish --dry-run
+      working-directory: ${{env.working-directory}}
+    - name: Publish Package
+      run: pub publish
+      working-directory: ${{env.working-directory}}
