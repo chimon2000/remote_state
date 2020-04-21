@@ -76,3 +76,5 @@ build/
 
 android/
 ios/
+coverage/
+packages/remote_state/test/.test_coverage.dart
