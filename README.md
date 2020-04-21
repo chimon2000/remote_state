@@ -1,6 +1,16 @@
-# remote_state
+# RemoteData
 
-## Slaying a UI Antipattern with Angular.
+![Build & test](https://github.com/chimon2000/remote_state/workflows/Build%20&%20test/badge.svg)
+[![codecov](https://codecov.io/gh/chimon2000/remote_state/branch/master/graph/badge.svg)](https://codecov.io/gh/chimon2000/remote_state)
+[![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
+
+Tools for mapping data from remote sources in Dart, similar to Elm's RemoteData: https://elmprogramming.com/remote-data.html
+
+| Package                                                                            | Pub                                                                                                    |
+|------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| [remote_state](https://github.com/felangel/bloc/tree/master/packages/remote_state) | [![pub package](https://img.shields.io/pub/v/remote_state.svg)](https://pub.dev/packages/remote_state) |
+
+## Slaying a UI Antipattern with Flutter.
 
 Library inspired by a blog post by [Kris Jenkins](https://twitter.com/krisajenkins) about [How Elm slays a UI antipattern](http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html).
 
