@@ -37,6 +37,6 @@ Guidelines for features:
 Thanks!!! 🎉🎉🎉
 
 [issues]: https://github.com/chimon2000/remote_state/issues
-[new issue]: https://github.com/chimon2000/good_first_issue/issues/new/choose
+[new issue]: https://github.com/chimon2000/remote_state/issues/new/choose
 [giphy capture]: https://giphy.com/apps/giphycapture
 [fork]: https://help.github.com/en/articles/fork-a-repo
