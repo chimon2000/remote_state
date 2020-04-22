@@ -34,7 +34,7 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// Defines logic based on the current state.
   ///
   /// [when] takes five methods as parameters that reflect each remote state.
-  /// [when] the returned method gets called with a [RemoteData] state, the method
+  /// [when] the returned method gets called with a [RemoteState] state, the method
   /// matching the correct state gets called.
   ///
   /// [initial] determines what to do if the state matches [RemoteState.initial]
@@ -59,7 +59,7 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// [maybeWhen] takes five methods as parameters that reflect each remote state
   /// as well as a required [orElse] method.
   ///
-  /// [maybeWhen] the returned method gets called with a [RemoteData] state, the method
+  /// [maybeWhen] the returned method gets called with a [RemoteState] state, the method
   /// matching the correct state gets called or [orElse] when there's no match.
   ///
   /// [initial] determines what to do if the state matches [RemoteState.initial]
@@ -85,7 +85,7 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// Achieves the same result as [when] without destructuring.
   ///
   /// [map] takes five methods as parameters that reflect each remote state.
-  /// [map] the returned method gets called with a [RemoteData] state, the method
+  /// [map] the returned method gets called with a [RemoteState] state, the method
   /// matching the correct state gets called.
   ///
   /// [initial] determines what to do if the state matches [RemoteState.initial]
@@ -108,7 +108,7 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// Achieves the same result as [maybeWhen] without destructuring.
   ///
   /// [maybeMap] takes five methods as parameters that reflect each remote state.
-  /// [maybeMap] the returned method gets called with a [RemoteData] state, the method
+  /// [maybeMap] the returned method gets called with a [RemoteState] state, the method
   /// matching the correct state gets called.
   ///
   /// [initial] determines what to do if the state matches [RemoteState.initial]

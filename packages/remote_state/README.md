@@ -1,4 +1,4 @@
-# RemoteData
+# RemoteState
 
 ![Build & test](https://github.com/chimon2000/remote_state/workflows/Build%20&%20test/badge.svg)
 [![codecov](https://codecov.io/gh/chimon2000/remote_state/branch/master/graph/badge.svg)](https://codecov.io/gh/chimon2000/remote_state)
@@ -28,7 +28,7 @@ Instead of using a complex object we use a single data type to express all possi
 
 ## Usage
 
-A common use case for RemoteData would be mapping it into a UI transition or component state.  Here is an example that uses [StateNotifier](https://pub.dev/documentation/state_notifier/latest/state_notifier/StateNotifier-class.html), found in [examples/counter_state_notifier](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier)
+A common use case for RemoteState would be mapping it into a UI transition or component state.  Here is an example that uses [StateNotifier](https://pub.dev/documentation/state_notifier/latest/state_notifier/StateNotifier-class.html), found in [examples/counter_state_notifier](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier)
 
 ### [counter/notifier/counter.dart](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier/lib/counter/notifier/counter.dart)
 
@@ -142,23 +142,23 @@ class HomePage extends StatelessWidget {
 
 ### RemoteState.initial
 
-`RemoteState.initial` is an instance of RemoteData that signifies the request hasn't been made yet.
+`RemoteState.initial` is an instance of RemoteState that signifies the request hasn't been made yet.
 
 ### RemoteState.loading
 
-`RemoteState.loading` is an instance of RemoteData that signifies the request has been made, but it hasn't returned any data yet.
+`RemoteState.loading` is an instance of RemoteState that signifies the request has been made, but it hasn't returned any data yet.
 
 ### RemoteState.success
 
-`RemoteState.success` is an instance of RemoteData that signifies the request has completed successfully and the new data (of type T) is available.
+`RemoteState.success` is an instance of RemoteState that signifies the request has completed successfully and the new data (of type T) is available.
 
 ### RemoteState.empty
 
-`RemoteState.success` is an instance of RemoteData that signifies the has completed successfully with an empty response.
+`RemoteState.success` is an instance of RemoteState that signifies the has completed successfully with an empty response.
 
 ### RemoteState.error
 
-`RemoteState.error` is an instance of RemoteData that signifies the request has failed.
+`RemoteState.error` is an instance of RemoteState that signifies the request has failed.
 
 ## Pattern matching high order functions
 
