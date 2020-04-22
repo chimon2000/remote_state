@@ -2,8 +2,19 @@
 ## [Unreleased]
 
 
-<a name="0.17.0"></a>
-## [0.17.0] - 2020-04-21
+<a name="0.18.0"></a>
+## [0.18.0] - 2020-04-21
+### Added
+- more documentation to readme
+- document public apis & hide constructors
+- readme health, usage & maintainer sections
+
+### Changed
+- state notifier example
+
+
+<a name="v0.17.0"></a>
+## [v0.17.0] - 2020-04-21
 ### Added
 - example in packages/remote_state
 
@@ -51,7 +62,8 @@
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.17.0...HEAD
-[0.17.0]: https://github.com/chimon2000/remote_state/compare/v0.16.0...0.17.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.18.0...HEAD
+[0.18.0]: https://github.com/chimon2000/remote_state/compare/v0.17.0...0.18.0
+[v0.17.0]: https://github.com/chimon2000/remote_state/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/chimon2000/remote_state/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/chimon2000/remote_state/compare/v0.14.0...v0.15.0
