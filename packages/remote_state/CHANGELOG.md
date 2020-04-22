@@ -2,8 +2,14 @@
 ## [Unreleased]
 
 
-<a name="0.18.0"></a>
-## [0.18.0] - 2020-04-21
+<a name="0.19.0"></a>
+## [0.19.0] - 2020-04-21
+### Fixed
+- bad documentation
+
+
+<a name="v0.18.0"></a>
+## [v0.18.0] - 2020-04-21
 ### Added
 - more documentation to readme
 - document public apis & hide constructors
@@ -62,8 +68,9 @@
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.18.0...HEAD
-[0.18.0]: https://github.com/chimon2000/remote_state/compare/v0.17.0...0.18.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.19.0...HEAD
+[0.19.0]: https://github.com/chimon2000/remote_state/compare/v0.18.0...0.19.0
+[v0.18.0]: https://github.com/chimon2000/remote_state/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/chimon2000/remote_state/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/chimon2000/remote_state/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/chimon2000/remote_state/compare/v0.14.0...v0.15.0
