@@ -12,26 +12,26 @@ T _$identity<T>(T value) => value;
 class _$RemoteStateTearOff {
   const _$RemoteStateTearOff();
 
-  Initial<T> initial<T>() {
-    return Initial<T>();
+  _Initial<T> initial<T>() {
+    return _Initial<T>();
   }
 
-  Success<T> success<T>(T value) {
-    return Success<T>(
+  _Loading<T> loading<T>() {
+    return _Loading<T>();
+  }
+
+  _Success<T> success<T>(T value) {
+    return _Success<T>(
       value,
     );
   }
 
-  Loading<T> loading<T>() {
-    return Loading<T>();
+  _Empty<T> empty<T>() {
+    return _Empty<T>();
   }
 
-  Empty<T> empty<T>() {
-    return Empty<T>();
-  }
-
-  Error<T> error<T>([String message]) {
-    return Error<T>(
+  _Error<T> error<T>([String message]) {
+    return _Error<T>(
       message,
     );
   }
@@ -44,35 +44,35 @@ mixin _$RemoteState<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result success(T value),
     @required Result loading(),
+    @required Result success(T value),
     @required Result empty(),
     @required Result error(String message),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result success(T value),
     Result loading(),
+    Result success(T value),
     Result empty(),
     Result error(String message),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(Initial<T> value),
-    @required Result success(Success<T> value),
-    @required Result loading(Loading<T> value),
-    @required Result empty(Empty<T> value),
-    @required Result error(Error<T> value),
+    @required Result initial(_Initial<T> value),
+    @required Result loading(_Loading<T> value),
+    @required Result success(_Success<T> value),
+    @required Result empty(_Empty<T> value),
+    @required Result error(_Error<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(Initial<T> value),
-    Result success(Success<T> value),
-    Result loading(Loading<T> value),
-    Result empty(Empty<T> value),
-    Result error(Error<T> value),
+    Result initial(_Initial<T> value),
+    Result loading(_Loading<T> value),
+    Result success(_Success<T> value),
+    Result empty(_Empty<T> value),
+    Result error(_Error<T> value),
     @required Result orElse(),
   });
 }
@@ -92,22 +92,23 @@ class _$RemoteStateCopyWithImpl<T, $Res>
   final $Res Function(RemoteState<T>) _then;
 }
 
-abstract class $InitialCopyWith<T, $Res> {
-  factory $InitialCopyWith(Initial<T> value, $Res Function(Initial<T>) then) =
-      _$InitialCopyWithImpl<T, $Res>;
+abstract class _$InitialCopyWith<T, $Res> {
+  factory _$InitialCopyWith(
+          _Initial<T> value, $Res Function(_Initial<T>) then) =
+      __$InitialCopyWithImpl<T, $Res>;
 }
 
-class _$InitialCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
-    implements $InitialCopyWith<T, $Res> {
-  _$InitialCopyWithImpl(Initial<T> _value, $Res Function(Initial<T>) _then)
-      : super(_value, (v) => _then(v as Initial<T>));
+class __$InitialCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
+    implements _$InitialCopyWith<T, $Res> {
+  __$InitialCopyWithImpl(_Initial<T> _value, $Res Function(_Initial<T>) _then)
+      : super(_value, (v) => _then(v as _Initial<T>));
 
   @override
-  Initial<T> get _value => super._value as Initial<T>;
+  _Initial<T> get _value => super._value as _Initial<T>;
 }
 
-class _$Initial<T> implements Initial<T> {
-  const _$Initial();
+class _$_Initial<T> implements _Initial<T> {
+  const _$_Initial();
 
   @override
   String toString() {
@@ -116,7 +117,7 @@ class _$Initial<T> implements Initial<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Initial<T>);
+    return identical(this, other) || (other is _Initial<T>);
   }
 
   @override
@@ -126,14 +127,14 @@ class _$Initial<T> implements Initial<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result success(T value),
     @required Result loading(),
+    @required Result success(T value),
     @required Result empty(),
     @required Result error(String message),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return initial();
@@ -143,8 +144,8 @@ class _$Initial<T> implements Initial<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result success(T value),
     Result loading(),
+    Result success(T value),
     Result empty(),
     Result error(String message),
     @required Result orElse(),
@@ -159,15 +160,15 @@ class _$Initial<T> implements Initial<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(Initial<T> value),
-    @required Result success(Success<T> value),
-    @required Result loading(Loading<T> value),
-    @required Result empty(Empty<T> value),
-    @required Result error(Error<T> value),
+    @required Result initial(_Initial<T> value),
+    @required Result loading(_Loading<T> value),
+    @required Result success(_Success<T> value),
+    @required Result empty(_Empty<T> value),
+    @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return initial(this);
@@ -176,11 +177,11 @@ class _$Initial<T> implements Initial<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(Initial<T> value),
-    Result success(Success<T> value),
-    Result loading(Loading<T> value),
-    Result empty(Empty<T> value),
-    Result error(Error<T> value),
+    Result initial(_Initial<T> value),
+    Result loading(_Loading<T> value),
+    Result success(_Success<T> value),
+    Result empty(_Empty<T> value),
+    Result error(_Error<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -191,153 +192,27 @@ class _$Initial<T> implements Initial<T> {
   }
 }
 
-abstract class Initial<T> implements RemoteState<T> {
-  const factory Initial() = _$Initial<T>;
+abstract class _Initial<T> implements RemoteState<T> {
+  const factory _Initial() = _$_Initial<T>;
 }
 
-abstract class $SuccessCopyWith<T, $Res> {
-  factory $SuccessCopyWith(Success<T> value, $Res Function(Success<T>) then) =
-      _$SuccessCopyWithImpl<T, $Res>;
-  $Res call({T value});
+abstract class _$LoadingCopyWith<T, $Res> {
+  factory _$LoadingCopyWith(
+          _Loading<T> value, $Res Function(_Loading<T>) then) =
+      __$LoadingCopyWithImpl<T, $Res>;
 }
 
-class _$SuccessCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
-    implements $SuccessCopyWith<T, $Res> {
-  _$SuccessCopyWithImpl(Success<T> _value, $Res Function(Success<T>) _then)
-      : super(_value, (v) => _then(v as Success<T>));
+class __$LoadingCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
+    implements _$LoadingCopyWith<T, $Res> {
+  __$LoadingCopyWithImpl(_Loading<T> _value, $Res Function(_Loading<T>) _then)
+      : super(_value, (v) => _then(v as _Loading<T>));
 
   @override
-  Success<T> get _value => super._value as Success<T>;
-
-  @override
-  $Res call({
-    Object value = freezed,
-  }) {
-    return _then(Success<T>(
-      value == freezed ? _value.value : value as T,
-    ));
-  }
+  _Loading<T> get _value => super._value as _Loading<T>;
 }
 
-class _$Success<T> implements Success<T> {
-  const _$Success(this.value) : assert(value != null);
-
-  @override
-  final T value;
-
-  @override
-  String toString() {
-    return 'RemoteState<$T>.success(value: $value)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is Success<T> &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
-
-  @override
-  $SuccessCopyWith<T, Success<T>> get copyWith =>
-      _$SuccessCopyWithImpl<T, Success<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result success(T value),
-    @required Result loading(),
-    @required Result empty(),
-    @required Result error(String message),
-  }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(loading != null);
-    assert(empty != null);
-    assert(error != null);
-    return success(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result success(T value),
-    Result loading(),
-    Result empty(),
-    Result error(String message),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (success != null) {
-      return success(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(Initial<T> value),
-    @required Result success(Success<T> value),
-    @required Result loading(Loading<T> value),
-    @required Result empty(Empty<T> value),
-    @required Result error(Error<T> value),
-  }) {
-    assert(initial != null);
-    assert(success != null);
-    assert(loading != null);
-    assert(empty != null);
-    assert(error != null);
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(Initial<T> value),
-    Result success(Success<T> value),
-    Result loading(Loading<T> value),
-    Result empty(Empty<T> value),
-    Result error(Error<T> value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Success<T> implements RemoteState<T> {
-  const factory Success(T value) = _$Success<T>;
-
-  T get value;
-  $SuccessCopyWith<T, Success<T>> get copyWith;
-}
-
-abstract class $LoadingCopyWith<T, $Res> {
-  factory $LoadingCopyWith(Loading<T> value, $Res Function(Loading<T>) then) =
-      _$LoadingCopyWithImpl<T, $Res>;
-}
-
-class _$LoadingCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
-    implements $LoadingCopyWith<T, $Res> {
-  _$LoadingCopyWithImpl(Loading<T> _value, $Res Function(Loading<T>) _then)
-      : super(_value, (v) => _then(v as Loading<T>));
-
-  @override
-  Loading<T> get _value => super._value as Loading<T>;
-}
-
-class _$Loading<T> implements Loading<T> {
-  const _$Loading();
+class _$_Loading<T> implements _Loading<T> {
+  const _$_Loading();
 
   @override
   String toString() {
@@ -346,7 +221,7 @@ class _$Loading<T> implements Loading<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Loading<T>);
+    return identical(this, other) || (other is _Loading<T>);
   }
 
   @override
@@ -356,14 +231,14 @@ class _$Loading<T> implements Loading<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result success(T value),
     @required Result loading(),
+    @required Result success(T value),
     @required Result empty(),
     @required Result error(String message),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return loading();
@@ -373,8 +248,8 @@ class _$Loading<T> implements Loading<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result success(T value),
     Result loading(),
+    Result success(T value),
     Result empty(),
     Result error(String message),
     @required Result orElse(),
@@ -389,15 +264,15 @@ class _$Loading<T> implements Loading<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(Initial<T> value),
-    @required Result success(Success<T> value),
-    @required Result loading(Loading<T> value),
-    @required Result empty(Empty<T> value),
-    @required Result error(Error<T> value),
+    @required Result initial(_Initial<T> value),
+    @required Result loading(_Loading<T> value),
+    @required Result success(_Success<T> value),
+    @required Result empty(_Empty<T> value),
+    @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return loading(this);
@@ -406,11 +281,11 @@ class _$Loading<T> implements Loading<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(Initial<T> value),
-    Result success(Success<T> value),
-    Result loading(Loading<T> value),
-    Result empty(Empty<T> value),
-    Result error(Error<T> value),
+    Result initial(_Initial<T> value),
+    Result loading(_Loading<T> value),
+    Result success(_Success<T> value),
+    Result empty(_Empty<T> value),
+    Result error(_Error<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -421,26 +296,154 @@ class _$Loading<T> implements Loading<T> {
   }
 }
 
-abstract class Loading<T> implements RemoteState<T> {
-  const factory Loading() = _$Loading<T>;
+abstract class _Loading<T> implements RemoteState<T> {
+  const factory _Loading() = _$_Loading<T>;
 }
 
-abstract class $EmptyCopyWith<T, $Res> {
-  factory $EmptyCopyWith(Empty<T> value, $Res Function(Empty<T>) then) =
-      _$EmptyCopyWithImpl<T, $Res>;
+abstract class _$SuccessCopyWith<T, $Res> {
+  factory _$SuccessCopyWith(
+          _Success<T> value, $Res Function(_Success<T>) then) =
+      __$SuccessCopyWithImpl<T, $Res>;
+  $Res call({T value});
 }
 
-class _$EmptyCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
-    implements $EmptyCopyWith<T, $Res> {
-  _$EmptyCopyWithImpl(Empty<T> _value, $Res Function(Empty<T>) _then)
-      : super(_value, (v) => _then(v as Empty<T>));
+class __$SuccessCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
+    implements _$SuccessCopyWith<T, $Res> {
+  __$SuccessCopyWithImpl(_Success<T> _value, $Res Function(_Success<T>) _then)
+      : super(_value, (v) => _then(v as _Success<T>));
 
   @override
-  Empty<T> get _value => super._value as Empty<T>;
+  _Success<T> get _value => super._value as _Success<T>;
+
+  @override
+  $Res call({
+    Object value = freezed,
+  }) {
+    return _then(_Success<T>(
+      value == freezed ? _value.value : value as T,
+    ));
+  }
 }
 
-class _$Empty<T> implements Empty<T> {
-  const _$Empty();
+class _$_Success<T> implements _Success<T> {
+  const _$_Success(this.value) : assert(value != null);
+
+  @override
+  final T value;
+
+  @override
+  String toString() {
+    return 'RemoteState<$T>.success(value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Success<T> &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+
+  @override
+  _$SuccessCopyWith<T, _Success<T>> get copyWith =>
+      __$SuccessCopyWithImpl<T, _Success<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result loading(),
+    @required Result success(T value),
+    @required Result empty(),
+    @required Result error(String message),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(success != null);
+    assert(empty != null);
+    assert(error != null);
+    return success(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result loading(),
+    Result success(T value),
+    Result empty(),
+    Result error(String message),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (success != null) {
+      return success(value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial<T> value),
+    @required Result loading(_Loading<T> value),
+    @required Result success(_Success<T> value),
+    @required Result empty(_Empty<T> value),
+    @required Result error(_Error<T> value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(success != null);
+    assert(empty != null);
+    assert(error != null);
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial<T> value),
+    Result loading(_Loading<T> value),
+    Result success(_Success<T> value),
+    Result empty(_Empty<T> value),
+    Result error(_Error<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Success<T> implements RemoteState<T> {
+  const factory _Success(T value) = _$_Success<T>;
+
+  T get value;
+  _$SuccessCopyWith<T, _Success<T>> get copyWith;
+}
+
+abstract class _$EmptyCopyWith<T, $Res> {
+  factory _$EmptyCopyWith(_Empty<T> value, $Res Function(_Empty<T>) then) =
+      __$EmptyCopyWithImpl<T, $Res>;
+}
+
+class __$EmptyCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
+    implements _$EmptyCopyWith<T, $Res> {
+  __$EmptyCopyWithImpl(_Empty<T> _value, $Res Function(_Empty<T>) _then)
+      : super(_value, (v) => _then(v as _Empty<T>));
+
+  @override
+  _Empty<T> get _value => super._value as _Empty<T>;
+}
+
+class _$_Empty<T> implements _Empty<T> {
+  const _$_Empty();
 
   @override
   String toString() {
@@ -449,7 +452,7 @@ class _$Empty<T> implements Empty<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Empty<T>);
+    return identical(this, other) || (other is _Empty<T>);
   }
 
   @override
@@ -459,14 +462,14 @@ class _$Empty<T> implements Empty<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result success(T value),
     @required Result loading(),
+    @required Result success(T value),
     @required Result empty(),
     @required Result error(String message),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return empty();
@@ -476,8 +479,8 @@ class _$Empty<T> implements Empty<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result success(T value),
     Result loading(),
+    Result success(T value),
     Result empty(),
     Result error(String message),
     @required Result orElse(),
@@ -492,15 +495,15 @@ class _$Empty<T> implements Empty<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(Initial<T> value),
-    @required Result success(Success<T> value),
-    @required Result loading(Loading<T> value),
-    @required Result empty(Empty<T> value),
-    @required Result error(Error<T> value),
+    @required Result initial(_Initial<T> value),
+    @required Result loading(_Loading<T> value),
+    @required Result success(_Success<T> value),
+    @required Result empty(_Empty<T> value),
+    @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return empty(this);
@@ -509,11 +512,11 @@ class _$Empty<T> implements Empty<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(Initial<T> value),
-    Result success(Success<T> value),
-    Result loading(Loading<T> value),
-    Result empty(Empty<T> value),
-    Result error(Error<T> value),
+    Result initial(_Initial<T> value),
+    Result loading(_Loading<T> value),
+    Result success(_Success<T> value),
+    Result empty(_Empty<T> value),
+    Result error(_Error<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -524,36 +527,36 @@ class _$Empty<T> implements Empty<T> {
   }
 }
 
-abstract class Empty<T> implements RemoteState<T> {
-  const factory Empty() = _$Empty<T>;
+abstract class _Empty<T> implements RemoteState<T> {
+  const factory _Empty() = _$_Empty<T>;
 }
 
-abstract class $ErrorCopyWith<T, $Res> {
-  factory $ErrorCopyWith(Error<T> value, $Res Function(Error<T>) then) =
-      _$ErrorCopyWithImpl<T, $Res>;
+abstract class _$ErrorCopyWith<T, $Res> {
+  factory _$ErrorCopyWith(_Error<T> value, $Res Function(_Error<T>) then) =
+      __$ErrorCopyWithImpl<T, $Res>;
   $Res call({String message});
 }
 
-class _$ErrorCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
-    implements $ErrorCopyWith<T, $Res> {
-  _$ErrorCopyWithImpl(Error<T> _value, $Res Function(Error<T>) _then)
-      : super(_value, (v) => _then(v as Error<T>));
+class __$ErrorCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
+    implements _$ErrorCopyWith<T, $Res> {
+  __$ErrorCopyWithImpl(_Error<T> _value, $Res Function(_Error<T>) _then)
+      : super(_value, (v) => _then(v as _Error<T>));
 
   @override
-  Error<T> get _value => super._value as Error<T>;
+  _Error<T> get _value => super._value as _Error<T>;
 
   @override
   $Res call({
     Object message = freezed,
   }) {
-    return _then(Error<T>(
+    return _then(_Error<T>(
       message == freezed ? _value.message : message as String,
     ));
   }
 }
 
-class _$Error<T> implements Error<T> {
-  const _$Error([this.message]);
+class _$_Error<T> implements _Error<T> {
+  const _$_Error([this.message]);
 
   @override
   final String message;
@@ -566,7 +569,7 @@ class _$Error<T> implements Error<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Error<T> &&
+        (other is _Error<T> &&
             (identical(other.message, message) ||
                 const DeepCollectionEquality().equals(other.message, message)));
   }
@@ -576,21 +579,21 @@ class _$Error<T> implements Error<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
 
   @override
-  $ErrorCopyWith<T, Error<T>> get copyWith =>
-      _$ErrorCopyWithImpl<T, Error<T>>(this, _$identity);
+  _$ErrorCopyWith<T, _Error<T>> get copyWith =>
+      __$ErrorCopyWithImpl<T, _Error<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result success(T value),
     @required Result loading(),
+    @required Result success(T value),
     @required Result empty(),
     @required Result error(String message),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return error(message);
@@ -600,8 +603,8 @@ class _$Error<T> implements Error<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result success(T value),
     Result loading(),
+    Result success(T value),
     Result empty(),
     Result error(String message),
     @required Result orElse(),
@@ -616,15 +619,15 @@ class _$Error<T> implements Error<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initial(Initial<T> value),
-    @required Result success(Success<T> value),
-    @required Result loading(Loading<T> value),
-    @required Result empty(Empty<T> value),
-    @required Result error(Error<T> value),
+    @required Result initial(_Initial<T> value),
+    @required Result loading(_Loading<T> value),
+    @required Result success(_Success<T> value),
+    @required Result empty(_Empty<T> value),
+    @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
-    assert(success != null);
     assert(loading != null);
+    assert(success != null);
     assert(empty != null);
     assert(error != null);
     return error(this);
@@ -633,11 +636,11 @@ class _$Error<T> implements Error<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initial(Initial<T> value),
-    Result success(Success<T> value),
-    Result loading(Loading<T> value),
-    Result empty(Empty<T> value),
-    Result error(Error<T> value),
+    Result initial(_Initial<T> value),
+    Result loading(_Loading<T> value),
+    Result success(_Success<T> value),
+    Result empty(_Empty<T> value),
+    Result error(_Error<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -648,9 +651,9 @@ class _$Error<T> implements Error<T> {
   }
 }
 
-abstract class Error<T> implements RemoteState<T> {
-  const factory Error([String message]) = _$Error<T>;
+abstract class _Error<T> implements RemoteState<T> {
+  const factory _Error([String message]) = _$_Error<T>;
 
   String get message;
-  $ErrorCopyWith<T, Error<T>> get copyWith;
+  _$ErrorCopyWith<T, _Error<T>> get copyWith;
 }
