@@ -28,7 +28,7 @@ Instead of using a complex object we use a single data type to express all possi
 
 ## Usage
 
-Here is an example that uses [StateNotifier](https://pub.dev/documentation/state_notifier/latest/state_notifier/StateNotifier-class.html), found in [examples/counter_state_notifier](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier)
+A common use case for RemoteData would be mapping it into a UI transition or component state.  Here is an example that uses [StateNotifier](https://pub.dev/documentation/state_notifier/latest/state_notifier/StateNotifier-class.html), found in [examples/counter_state_notifier](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier)
 
 ### [counter/notifier/counter.dart](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier/lib/counter/notifier/counter.dart)
 
@@ -52,7 +52,6 @@ class Counter extends StateNotifier<int> {
 
 ```
 
-
 ### [main.dart](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier/lib/main.dart)
 
 ```dart
@@ -70,7 +69,6 @@ class ExampleApp extends StatelessWidget {
 ```
 
 ### [home.dart](https://github.com/chimon2000/remote_state/blob/master/examples/counter_state_notifier/lib/home.dart)
-
 
 ```dart
 class HomePage extends StatelessWidget {
@@ -134,6 +132,68 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-### Maintainers
+## API
+
+### RemoteState
+
+`RemoteState<T>` is usedto annotate your request variables. It wraps all possible request states into one single union type. Use the parameters to specify.
+
+- T: The success value type.
+
+### RemoteState.initial
+
+`RemoteState.initial` is an instance of RemoteData that signifies the request hasn't been made yet.
+
+### RemoteState.loading
+
+`RemoteState.loading` is an instance of RemoteData that signifies the request has been made, but it hasn't returned any data yet.
+
+### RemoteState.success
+
+`RemoteState.success` is an instance of RemoteData that signifies the request has completed successfully and the new data (of type T) is available.
+
+### RemoteState.empty
+
+`RemoteState.success` is an instance of RemoteData that signifies the has completed successfully with an empty response.
+
+### RemoteState.error
+
+`RemoteState.error` is an instance of RemoteData that signifies the request has failed.
+
+## Pattern matching high order functions
+
+### When
+
+The `when` method is a high order function that accepts a method for each state and matches the request state with the appropriate callback function. All callbacks are **required** and must not be null.
+
+### MaybeWhen
+
+The `maybeWhen` method is a high order function that accepts a method for each state and matches the request state with the appropriate callback function or a fallback callback for missing methods.  Only `orElse` is required.
+
+### Map
+
+The `map` method is the equivalent of `when` without the destructuring.
+
+### MaybeMap
+
+The `maybeWhen` method is the equivalent of `when` without the destructuring.
+
+## Maintainers
 
 - [Ryan Edge](https://github.com/chimon2000)
+
+## References
+
+- [How to fix a bad user interface](https://www.scotthurff.com/posts/why-your-user-interface-is-awkward-youre-ignoring-the-ui-stack/)
+
+- [Slaying a UI Antipattern with Web Components (and TypeScript)](https://bendyworks.com/blog/slaying-a-ui-antipattern-with-web-components-and-typescript)
+
+- [How Elm Slays a UI Antipattern](http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html)
+
+- [Slaying a UI Antipattern with Angular](https://medium.com/@joanllenas/slaying-a-ui-antipattern-with-angular-4c7536fafc54)
+
+- [Slaying a UI Antipattern with Flow](https://medium.com/@gcanti/slaying-a-ui-antipattern-with-flow-5eed0cfb627b)
+
+- [Slaying a UI Antipattern in React](https://medium.com/javascript-inside/slaying-a-ui-antipattern-in-react-64a3b98242c)
+
+- [Slaying a UI Antipattern in Fantasyland](https://medium.com/javascript-inside/slaying-a-ui-antipattern-in-fantasyland-907cbc322d2a)
