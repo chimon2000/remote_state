@@ -1,0 +1,28 @@
+name: counter_graphql
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  freezed_annotation: ^0.7.1
+  graphql_flutter:
+  state_notifier:
+  flutter_state_notifier:
+  remote_state:
+    path: ../../packages/remote_state
+  provider:
+  flutter:
+    sdk: flutter
+    
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  freezed: ^0.10.6
+  build_runner:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
