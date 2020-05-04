@@ -26,13 +26,10 @@ class _$RemoteStateTearOff {
     );
   }
 
-  _Empty<T> empty<T>() {
-    return _Empty<T>();
-  }
-
-  _Error<T> error<T>([String message]) {
+  _Error<T> error<T>([dynamic error, StackTrace stackTrace]) {
     return _Error<T>(
-      message,
+      error,
+      stackTrace,
     );
   }
 }
@@ -46,16 +43,14 @@ mixin _$RemoteState<T> {
     @required Result initial(),
     @required Result loading(),
     @required Result success(T value),
-    @required Result empty(),
-    @required Result error(String message),
+    @required Result error(dynamic error, StackTrace stackTrace),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
     Result success(T value),
-    Result empty(),
-    Result error(String message),
+    Result error(dynamic error, StackTrace stackTrace),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -63,7 +58,6 @@ mixin _$RemoteState<T> {
     @required Result initial(_Initial<T> value),
     @required Result loading(_Loading<T> value),
     @required Result success(_Success<T> value),
-    @required Result empty(_Empty<T> value),
     @required Result error(_Error<T> value),
   });
   @optionalTypeArgs
@@ -71,7 +65,6 @@ mixin _$RemoteState<T> {
     Result initial(_Initial<T> value),
     Result loading(_Loading<T> value),
     Result success(_Success<T> value),
-    Result empty(_Empty<T> value),
     Result error(_Error<T> value),
     @required Result orElse(),
   });
@@ -108,11 +101,59 @@ class __$InitialCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
 }
 
 class _$_Initial<T> implements _Initial<T> {
-  const _$_Initial();
+  _$_Initial();
+
+  bool _didisInitial = false;
+  bool _isInitial;
+
+  @override
+  bool get isInitial {
+    if (_didisInitial == false) {
+      _didisInitial = true;
+      _isInitial = maybeWhen(initial: () => true, orElse: () => false);
+    }
+    return _isInitial;
+  }
+
+  bool _didisLoading = false;
+  bool _isLoading;
+
+  @override
+  bool get isLoading {
+    if (_didisLoading == false) {
+      _didisLoading = true;
+      _isLoading = maybeWhen(loading: () => true, orElse: () => false);
+    }
+    return _isLoading;
+  }
+
+  bool _didisSuccess = false;
+  bool _isSuccess;
+
+  @override
+  bool get isSuccess {
+    if (_didisSuccess == false) {
+      _didisSuccess = true;
+      _isSuccess = maybeWhen(success: (_) => true, orElse: () => false);
+    }
+    return _isSuccess;
+  }
+
+  bool _didisError = false;
+  bool _isError;
+
+  @override
+  bool get isError {
+    if (_didisError == false) {
+      _didisError = true;
+      _isError = maybeWhen(error: (_, __) => true, orElse: () => false);
+    }
+    return _isError;
+  }
 
   @override
   String toString() {
-    return 'RemoteState<$T>.initial()';
+    return 'RemoteState<$T>.initial(isInitial: $isInitial, isLoading: $isLoading, isSuccess: $isSuccess, isError: $isError)';
   }
 
   @override
@@ -129,13 +170,11 @@ class _$_Initial<T> implements _Initial<T> {
     @required Result initial(),
     @required Result loading(),
     @required Result success(T value),
-    @required Result empty(),
-    @required Result error(String message),
+    @required Result error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
     return initial();
   }
@@ -146,8 +185,7 @@ class _$_Initial<T> implements _Initial<T> {
     Result initial(),
     Result loading(),
     Result success(T value),
-    Result empty(),
-    Result error(String message),
+    Result error(dynamic error, StackTrace stackTrace),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -163,13 +201,11 @@ class _$_Initial<T> implements _Initial<T> {
     @required Result initial(_Initial<T> value),
     @required Result loading(_Loading<T> value),
     @required Result success(_Success<T> value),
-    @required Result empty(_Empty<T> value),
     @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
     return initial(this);
   }
@@ -180,7 +216,6 @@ class _$_Initial<T> implements _Initial<T> {
     Result initial(_Initial<T> value),
     Result loading(_Loading<T> value),
     Result success(_Success<T> value),
-    Result empty(_Empty<T> value),
     Result error(_Error<T> value),
     @required Result orElse(),
   }) {
@@ -193,7 +228,7 @@ class _$_Initial<T> implements _Initial<T> {
 }
 
 abstract class _Initial<T> implements RemoteState<T> {
-  const factory _Initial() = _$_Initial<T>;
+  factory _Initial() = _$_Initial<T>;
 }
 
 abstract class _$LoadingCopyWith<T, $Res> {
@@ -212,11 +247,59 @@ class __$LoadingCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
 }
 
 class _$_Loading<T> implements _Loading<T> {
-  const _$_Loading();
+  _$_Loading();
+
+  bool _didisInitial = false;
+  bool _isInitial;
+
+  @override
+  bool get isInitial {
+    if (_didisInitial == false) {
+      _didisInitial = true;
+      _isInitial = maybeWhen(initial: () => true, orElse: () => false);
+    }
+    return _isInitial;
+  }
+
+  bool _didisLoading = false;
+  bool _isLoading;
+
+  @override
+  bool get isLoading {
+    if (_didisLoading == false) {
+      _didisLoading = true;
+      _isLoading = maybeWhen(loading: () => true, orElse: () => false);
+    }
+    return _isLoading;
+  }
+
+  bool _didisSuccess = false;
+  bool _isSuccess;
+
+  @override
+  bool get isSuccess {
+    if (_didisSuccess == false) {
+      _didisSuccess = true;
+      _isSuccess = maybeWhen(success: (_) => true, orElse: () => false);
+    }
+    return _isSuccess;
+  }
+
+  bool _didisError = false;
+  bool _isError;
+
+  @override
+  bool get isError {
+    if (_didisError == false) {
+      _didisError = true;
+      _isError = maybeWhen(error: (_, __) => true, orElse: () => false);
+    }
+    return _isError;
+  }
 
   @override
   String toString() {
-    return 'RemoteState<$T>.loading()';
+    return 'RemoteState<$T>.loading(isInitial: $isInitial, isLoading: $isLoading, isSuccess: $isSuccess, isError: $isError)';
   }
 
   @override
@@ -233,13 +316,11 @@ class _$_Loading<T> implements _Loading<T> {
     @required Result initial(),
     @required Result loading(),
     @required Result success(T value),
-    @required Result empty(),
-    @required Result error(String message),
+    @required Result error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
     return loading();
   }
@@ -250,8 +331,7 @@ class _$_Loading<T> implements _Loading<T> {
     Result initial(),
     Result loading(),
     Result success(T value),
-    Result empty(),
-    Result error(String message),
+    Result error(dynamic error, StackTrace stackTrace),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -267,13 +347,11 @@ class _$_Loading<T> implements _Loading<T> {
     @required Result initial(_Initial<T> value),
     @required Result loading(_Loading<T> value),
     @required Result success(_Success<T> value),
-    @required Result empty(_Empty<T> value),
     @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
     return loading(this);
   }
@@ -284,7 +362,6 @@ class _$_Loading<T> implements _Loading<T> {
     Result initial(_Initial<T> value),
     Result loading(_Loading<T> value),
     Result success(_Success<T> value),
-    Result empty(_Empty<T> value),
     Result error(_Error<T> value),
     @required Result orElse(),
   }) {
@@ -297,7 +374,7 @@ class _$_Loading<T> implements _Loading<T> {
 }
 
 abstract class _Loading<T> implements RemoteState<T> {
-  const factory _Loading() = _$_Loading<T>;
+  factory _Loading() = _$_Loading<T>;
 }
 
 abstract class _$SuccessCopyWith<T, $Res> {
@@ -326,14 +403,62 @@ class __$SuccessCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
 }
 
 class _$_Success<T> implements _Success<T> {
-  const _$_Success(this.value) : assert(value != null);
+  _$_Success(this.value) : assert(value != null);
 
   @override
   final T value;
 
+  bool _didisInitial = false;
+  bool _isInitial;
+
+  @override
+  bool get isInitial {
+    if (_didisInitial == false) {
+      _didisInitial = true;
+      _isInitial = maybeWhen(initial: () => true, orElse: () => false);
+    }
+    return _isInitial;
+  }
+
+  bool _didisLoading = false;
+  bool _isLoading;
+
+  @override
+  bool get isLoading {
+    if (_didisLoading == false) {
+      _didisLoading = true;
+      _isLoading = maybeWhen(loading: () => true, orElse: () => false);
+    }
+    return _isLoading;
+  }
+
+  bool _didisSuccess = false;
+  bool _isSuccess;
+
+  @override
+  bool get isSuccess {
+    if (_didisSuccess == false) {
+      _didisSuccess = true;
+      _isSuccess = maybeWhen(success: (_) => true, orElse: () => false);
+    }
+    return _isSuccess;
+  }
+
+  bool _didisError = false;
+  bool _isError;
+
+  @override
+  bool get isError {
+    if (_didisError == false) {
+      _didisError = true;
+      _isError = maybeWhen(error: (_, __) => true, orElse: () => false);
+    }
+    return _isError;
+  }
+
   @override
   String toString() {
-    return 'RemoteState<$T>.success(value: $value)';
+    return 'RemoteState<$T>.success(value: $value, isInitial: $isInitial, isLoading: $isLoading, isSuccess: $isSuccess, isError: $isError)';
   }
 
   @override
@@ -358,13 +483,11 @@ class _$_Success<T> implements _Success<T> {
     @required Result initial(),
     @required Result loading(),
     @required Result success(T value),
-    @required Result empty(),
-    @required Result error(String message),
+    @required Result error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
     return success(value);
   }
@@ -375,8 +498,7 @@ class _$_Success<T> implements _Success<T> {
     Result initial(),
     Result loading(),
     Result success(T value),
-    Result empty(),
-    Result error(String message),
+    Result error(dynamic error, StackTrace stackTrace),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -392,13 +514,11 @@ class _$_Success<T> implements _Success<T> {
     @required Result initial(_Initial<T> value),
     @required Result loading(_Loading<T> value),
     @required Result success(_Success<T> value),
-    @required Result empty(_Empty<T> value),
     @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
     return success(this);
   }
@@ -409,7 +529,6 @@ class _$_Success<T> implements _Success<T> {
     Result initial(_Initial<T> value),
     Result loading(_Loading<T> value),
     Result success(_Success<T> value),
-    Result empty(_Empty<T> value),
     Result error(_Error<T> value),
     @required Result orElse(),
   }) {
@@ -422,119 +541,16 @@ class _$_Success<T> implements _Success<T> {
 }
 
 abstract class _Success<T> implements RemoteState<T> {
-  const factory _Success(T value) = _$_Success<T>;
+  factory _Success(T value) = _$_Success<T>;
 
   T get value;
   _$SuccessCopyWith<T, _Success<T>> get copyWith;
 }
 
-abstract class _$EmptyCopyWith<T, $Res> {
-  factory _$EmptyCopyWith(_Empty<T> value, $Res Function(_Empty<T>) then) =
-      __$EmptyCopyWithImpl<T, $Res>;
-}
-
-class __$EmptyCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
-    implements _$EmptyCopyWith<T, $Res> {
-  __$EmptyCopyWithImpl(_Empty<T> _value, $Res Function(_Empty<T>) _then)
-      : super(_value, (v) => _then(v as _Empty<T>));
-
-  @override
-  _Empty<T> get _value => super._value as _Empty<T>;
-}
-
-class _$_Empty<T> implements _Empty<T> {
-  const _$_Empty();
-
-  @override
-  String toString() {
-    return 'RemoteState<$T>.empty()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Empty<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result success(T value),
-    @required Result empty(),
-    @required Result error(String message),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(success != null);
-    assert(empty != null);
-    assert(error != null);
-    return empty();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result success(T value),
-    Result empty(),
-    Result error(String message),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empty != null) {
-      return empty();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial<T> value),
-    @required Result loading(_Loading<T> value),
-    @required Result success(_Success<T> value),
-    @required Result empty(_Empty<T> value),
-    @required Result error(_Error<T> value),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(success != null);
-    assert(empty != null);
-    assert(error != null);
-    return empty(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial<T> value),
-    Result loading(_Loading<T> value),
-    Result success(_Success<T> value),
-    Result empty(_Empty<T> value),
-    Result error(_Error<T> value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (empty != null) {
-      return empty(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Empty<T> implements RemoteState<T> {
-  const factory _Empty() = _$_Empty<T>;
-}
-
 abstract class _$ErrorCopyWith<T, $Res> {
   factory _$ErrorCopyWith(_Error<T> value, $Res Function(_Error<T>) then) =
       __$ErrorCopyWithImpl<T, $Res>;
-  $Res call({String message});
+  $Res call({dynamic error, StackTrace stackTrace});
 }
 
 class __$ErrorCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
@@ -547,36 +563,93 @@ class __$ErrorCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object message = freezed,
+    Object error = freezed,
+    Object stackTrace = freezed,
   }) {
     return _then(_Error<T>(
-      message == freezed ? _value.message : message as String,
+      error == freezed ? _value.error : error as dynamic,
+      stackTrace == freezed ? _value.stackTrace : stackTrace as StackTrace,
     ));
   }
 }
 
 class _$_Error<T> implements _Error<T> {
-  const _$_Error([this.message]);
+  _$_Error([this.error, this.stackTrace]);
 
   @override
-  final String message;
+  final dynamic error;
+  @override
+  final StackTrace stackTrace;
+
+  bool _didisInitial = false;
+  bool _isInitial;
+
+  @override
+  bool get isInitial {
+    if (_didisInitial == false) {
+      _didisInitial = true;
+      _isInitial = maybeWhen(initial: () => true, orElse: () => false);
+    }
+    return _isInitial;
+  }
+
+  bool _didisLoading = false;
+  bool _isLoading;
+
+  @override
+  bool get isLoading {
+    if (_didisLoading == false) {
+      _didisLoading = true;
+      _isLoading = maybeWhen(loading: () => true, orElse: () => false);
+    }
+    return _isLoading;
+  }
+
+  bool _didisSuccess = false;
+  bool _isSuccess;
+
+  @override
+  bool get isSuccess {
+    if (_didisSuccess == false) {
+      _didisSuccess = true;
+      _isSuccess = maybeWhen(success: (_) => true, orElse: () => false);
+    }
+    return _isSuccess;
+  }
+
+  bool _didisError = false;
+  bool _isError;
+
+  @override
+  bool get isError {
+    if (_didisError == false) {
+      _didisError = true;
+      _isError = maybeWhen(error: (_, __) => true, orElse: () => false);
+    }
+    return _isError;
+  }
 
   @override
   String toString() {
-    return 'RemoteState<$T>.error(message: $message)';
+    return 'RemoteState<$T>.error(error: $error, stackTrace: $stackTrace, isInitial: $isInitial, isLoading: $isLoading, isSuccess: $isSuccess, isError: $isError)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Error<T> &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.stackTrace, stackTrace) ||
+                const DeepCollectionEquality()
+                    .equals(other.stackTrace, stackTrace)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(stackTrace);
 
   @override
   _$ErrorCopyWith<T, _Error<T>> get copyWith =>
@@ -588,15 +661,13 @@ class _$_Error<T> implements _Error<T> {
     @required Result initial(),
     @required Result loading(),
     @required Result success(T value),
-    @required Result empty(),
-    @required Result error(String message),
+    @required Result error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
-    return error(message);
+    return error(this.error, stackTrace);
   }
 
   @override
@@ -605,13 +676,12 @@ class _$_Error<T> implements _Error<T> {
     Result initial(),
     Result loading(),
     Result success(T value),
-    Result empty(),
-    Result error(String message),
+    Result error(dynamic error, StackTrace stackTrace),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
-      return error(message);
+      return error(this.error, stackTrace);
     }
     return orElse();
   }
@@ -622,13 +692,11 @@ class _$_Error<T> implements _Error<T> {
     @required Result initial(_Initial<T> value),
     @required Result loading(_Loading<T> value),
     @required Result success(_Success<T> value),
-    @required Result empty(_Empty<T> value),
     @required Result error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(success != null);
-    assert(empty != null);
     assert(error != null);
     return error(this);
   }
@@ -639,7 +707,6 @@ class _$_Error<T> implements _Error<T> {
     Result initial(_Initial<T> value),
     Result loading(_Loading<T> value),
     Result success(_Success<T> value),
-    Result empty(_Empty<T> value),
     Result error(_Error<T> value),
     @required Result orElse(),
   }) {
@@ -652,8 +719,9 @@ class _$_Error<T> implements _Error<T> {
 }
 
 abstract class _Error<T> implements RemoteState<T> {
-  const factory _Error([String message]) = _$_Error<T>;
+  factory _Error([dynamic error, StackTrace stackTrace]) = _$_Error<T>;
 
-  String get message;
+  dynamic get error;
+  StackTrace get stackTrace;
   _$ErrorCopyWith<T, _Error<T>> get copyWith;
 }
