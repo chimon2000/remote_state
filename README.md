@@ -178,6 +178,24 @@ The `map` method is the equivalent of `when` without the destructuring.
 
 The `maybeWhen` method is the equivalent of `when` without the destructuring.
 
+## State Predicates
+
+### isInitial
+
+ The `isInitial` predicate returns true if we haven't asked for data yet.
+
+### isLoading
+
+ The `isLoading` predicate returns true if we're loading.
+
+### isSuccess
+
+ The `isSuccess` predicate returns true if we've successfully loaded some data.
+
+### isError
+
+ The `isError` predicate returns true if we've failed to load some data.
+
 ## Maintainers
 
 - [Ryan Edge](https://github.com/chimon2000)
