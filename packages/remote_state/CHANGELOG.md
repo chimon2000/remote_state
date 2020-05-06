@@ -2,8 +2,27 @@
 ## [Unreleased]
 
 
-<a name="0.19.0"></a>
-## [0.19.0] - 2020-04-21
+<a name="1.0.0"></a>
+## [1.0.0] - 2020-05-05
+### Added
+- add flutter_hooks example.
+- add docs for state predicates
+- updated examples
+- removed empty, added stacktrace to error, added predicates
+
+### Changed
+- state notifier hook per suggestions.
+
+### Documented
+- removed `empty` from docs
+
+### BREAKING CHANGE
+
+empty is no longer supported because it is not considered a valid remote state.
+
+
+<a name="v0.19.0"></a>
+## [v0.19.0] - 2020-04-21
 ### Fixed
 - bad documentation
 
@@ -68,8 +87,9 @@
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/0.19.0...HEAD
-[0.19.0]: https://github.com/chimon2000/remote_state/compare/v0.18.0...0.19.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/chimon2000/remote_state/compare/v0.19.0...1.0.0
+[v0.19.0]: https://github.com/chimon2000/remote_state/compare/v0.18.0...v0.19.0
 [v0.18.0]: https://github.com/chimon2000/remote_state/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/chimon2000/remote_state/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/chimon2000/remote_state/compare/v0.15.0...v0.16.0
