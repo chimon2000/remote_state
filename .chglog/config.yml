@@ -12,6 +12,7 @@ options:
       - remove
       - deprecate
       - refactor
+      - docs
   commit_groups:
     title_maps:
       feat: Added
@@ -19,6 +20,7 @@ options:
       remove: Removed
       deprecate: Deprecated
       refactor: Changed
+      docs: Documented
   header:
     pattern: "^(\\w*)\\:\\s(.*)$"
     pattern_maps:
