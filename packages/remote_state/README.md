@@ -95,7 +95,6 @@ class HomePage extends StatelessWidget {
             //3. Render state changes
             counterState.when(
               initial: () => Text('Not loaded', style: textStyle),
-              empty: () => Text('Never', style: textStyle),
               success: (value) => Text('$value', style: textStyle),
               loading: () => Text('Loading...', style: textStyle),
               error: (_) => Text('Error', style: textStyle),
@@ -151,10 +150,6 @@ class HomePage extends StatelessWidget {
 ### RemoteState.success
 
 `RemoteState.success` is an instance of RemoteState that signifies the request has completed successfully and the new data (of type T) is available.
-
-### RemoteState.empty
-
-`RemoteState.success` is an instance of RemoteState that signifies the has completed successfully with an empty response.
 
 ### RemoteState.error
 
