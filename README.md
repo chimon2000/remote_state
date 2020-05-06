@@ -95,7 +95,6 @@ class HomePage extends StatelessWidget {
             //3. Render state changes
             counterState.when(
               initial: () => Text('Not loaded', style: textStyle),
-              empty: () => Text('Never', style: textStyle),
               success: (value) => Text('$value', style: textStyle),
               loading: () => Text('Loading...', style: textStyle),
               error: (_) => Text('Error', style: textStyle),
@@ -152,10 +151,6 @@ class HomePage extends StatelessWidget {
 
 `RemoteState.success` is an instance of RemoteState that signifies the request has completed successfully and the new data (of type T) is available.
 
-### RemoteState.empty
-
-`RemoteState.success` is an instance of RemoteState that signifies the has completed successfully with an empty response.
-
 ### RemoteState.error
 
 `RemoteState.error` is an instance of RemoteState that signifies the request has failed.
@@ -177,6 +172,24 @@ The `map` method is the equivalent of `when` without the destructuring.
 ### MaybeMap
 
 The `maybeWhen` method is the equivalent of `when` without the destructuring.
+
+## State Predicates
+
+### isInitial
+
+ The `isInitial` predicate returns true if we haven't asked for data yet.
+
+### isLoading
+
+ The `isLoading` predicate returns true if we're loading.
+
+### isSuccess
+
+ The `isSuccess` predicate returns true if we've successfully loaded some data.
+
+### isError
+
+ The `isError` predicate returns true if we've failed to load some data.
 
 ## Maintainers
 

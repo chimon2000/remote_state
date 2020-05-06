@@ -47,10 +47,9 @@ class HomePage extends StatelessWidget {
             BlocBuilder<CounterBloc, RemoteState<int>>(
               builder: (_, state) => state.when(
                 initial: () => Text('Not loaded', style: textStyle),
-                empty: () => Text('Never', style: textStyle),
                 success: (value) => Text('$value', style: textStyle),
                 loading: () => Text('Loading...', style: textStyle),
-                error: (_) => Text('Error', style: textStyle),
+                error: (_, __) => Text('Error', style: textStyle),
               ),
             )
           ],

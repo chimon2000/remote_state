@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     });
     await Future.delayed(Duration(seconds: 1));
     setState(() {
-      counterState = RemoteState.empty();
+      counterState = RemoteState.success(0);
     });
   }
 
@@ -80,10 +80,9 @@ class _HomePageState extends State<HomePage> {
             //3. Render state changes
             counterState.when(
               initial: () => Text('Not loaded', style: textStyle),
-              empty: () => Text('Zero', style: textStyle),
               success: (value) => Text('$value', style: textStyle),
               loading: () => Text('Loading...', style: textStyle),
-              error: (_) => Text('Error', style: textStyle),
+              error: (_, __) => Text('Error', style: textStyle),
             ),
           ],
         ),
