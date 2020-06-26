@@ -2,8 +2,14 @@
 ## [Unreleased]
 
 
-<a name="1.2.0"></a>
-## [1.2.0] - 2020-06-26
+<a name="1.3.0"></a>
+## [1.3.0] - 2020-06-26
+### Fixed
+- added freezed_annotation back to deps
+
+
+<a name="v1.2.0"></a>
+## [v1.2.0] - 2020-06-26
 ### Fixed
 - readme example
 
@@ -99,8 +105,9 @@ empty is no longer supported because it is not considered a valid remote state.
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.2.0...HEAD
-[1.2.0]: https://github.com/chimon2000/remote_state/compare/v1.1.0...1.2.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.3.0...HEAD
+[1.3.0]: https://github.com/chimon2000/remote_state/compare/v1.2.0...1.3.0
+[v1.2.0]: https://github.com/chimon2000/remote_state/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/chimon2000/remote_state/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/chimon2000/remote_state/compare/v0.19.0...v1.0.0
 [v0.19.0]: https://github.com/chimon2000/remote_state/compare/v0.18.0...v0.19.0
