@@ -34,7 +34,7 @@ A common use case for RemoteState would be mapping it into a UI transition or co
 
 ```dart
 
-class Counter extends StateNotifier<int> {
+class Counter extends StateNotifier<RemoteState<int>> {
   Counter(): super(RemoteState.initial())
 
   void increment() {
