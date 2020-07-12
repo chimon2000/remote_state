@@ -1,5 +1,7 @@
 library remote_state;
 
+import 'dart:async';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'remote_state.freezed.dart';
@@ -135,4 +137,12 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// Returns true only if [RemoteState] is [RemoteState.error]
   @late
   bool get isError => maybeWhen(error: (_, __) => true, orElse: () => false);
+
+  static Future<RemoteState<T>> guard<T>(Future<T> Function() future) async {
+    try {
+      return RemoteState.success(await future());
+    } catch (err, stack) {
+      return RemoteState.error(err, stack);
+    }
+  }
 }
