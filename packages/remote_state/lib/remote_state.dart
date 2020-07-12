@@ -138,6 +138,9 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   @late
   bool get isError => maybeWhen(error: (_, __) => true, orElse: () => false);
 
+  /// Convert a [Future] to RemoteState.
+  /// Emits [RemoteState.success] if the future completes
+  /// Emits [RemoteState.error] if future fails.
   static Future<RemoteState<T>> guard<T>(Future<T> Function() future) async {
     try {
       return RemoteState.success(await future());
