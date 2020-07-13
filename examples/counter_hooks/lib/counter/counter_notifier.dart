@@ -10,32 +10,16 @@ class CounterNotifier extends StateNotifier<RemoteState<int>> {
   }
 
   getCount() async {
-    try {
-      state = RemoteState.loading();
+    state = RemoteState.loading();
 
-      var count = await _counterClient.getCount();
-
-      state = RemoteState.success(count);
-    } catch (e) {
-      state = RemoteState.error(e);
-    }
+    state = await RemoteState.guard(() => _counterClient.getCount());
   }
 
   increment() async {
-    try {
-      var count = await _counterClient.increment();
-      state = RemoteState.success(count);
-    } catch (e) {
-      state = RemoteState.error(e);
-    }
+    state = await RemoteState.guard(() => _counterClient.increment());
   }
 
   decrement() async {
-    try {
-      var count = await _counterClient.decrement();
-      state = RemoteState.success(count);
-    } catch (e) {
-      state = RemoteState.error(e);
-    }
+    state = await RemoteState.guard(() => _counterClient.decrement());
   }
 }

@@ -34,19 +34,25 @@ A common use case for RemoteState would be mapping it into a UI transition or co
 
 ```dart
 
-class Counter extends StateNotifier<RemoteState<int>> {
-  Counter(): super(RemoteState.initial())
+class CounterNotifier extends StateNotifier<RemoteState<int>> {
+  var _counterClient = CounterClient();
 
-  void increment() {
-    try {
-      state = RemoteState.loading();
+  CounterNotifier() : super(RemoteState.initial()) {
+    getCount();
+  }
 
-      var count = await api.increment();
+  getCount() async {
+    state = RemoteState.loading();
 
-      state = RemoteState.success(count);
-    } catch (e) {
-      state = RemoteState.error(e.message);
-    }
+    state = await RemoteState.guard(() => _counterClient.getCount());
+  }
+
+  increment() async {
+    state = await RemoteState.guard(() => _counterClient.increment());
+  }
+
+  decrement() async {
+    state = await RemoteState.guard(() => _counterClient.decrement());
   }
 }
 
@@ -154,6 +160,10 @@ class HomePage extends StatelessWidget {
 ### RemoteState.error
 
 `RemoteState.error` is an instance of RemoteState that signifies the request has failed.
+
+### RemoteState.guard
+
+`RemoteState.guard` is a static function that converts a Future to RemoteState.  It will emit RemoteState.error if the future fails or RemoteState.success if the future completes.
 
 ## Pattern matching high order functions
 
