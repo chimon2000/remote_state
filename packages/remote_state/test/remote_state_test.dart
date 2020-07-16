@@ -660,6 +660,19 @@ void main() {
           'RemoteState<dynamic>.initial(isInitial: true, isLoading: false, isSuccess: false, isError: false)');
     });
   });
+
+  group('RemoteState.guard', () {
+    test('emits RemoteState.success when future completes', () async {
+      var value = await RemoteState.guard(() => Future.value(0));
+      expect(value, RemoteState.success(0));
+    });
+    test('emits RemoteState.error when future fails', () async {
+      final stack = StackTrace.current;
+
+      var value = await RemoteState.guard(() => Future.error(0, stack));
+      expect(value, RemoteState.error(0, stack));
+    });
+  });
 }
 
 mapNoOp(_) {}

@@ -2,8 +2,35 @@
 ## [Unreleased]
 
 
-<a name="1.0.0"></a>
-## [1.0.0] - 2020-05-05
+<a name="1.4.0"></a>
+## [1.4.0] - 2020-07-12
+### Added
+- update docs
+- add tests
+- add guard function
+- upgrade sdk version
+
+
+<a name="v1.3.0"></a>
+## [v1.3.0] - 2020-06-26
+### Fixed
+- added freezed_annotation back to deps
+
+
+<a name="v1.2.0"></a>
+## [v1.2.0] - 2020-06-26
+### Fixed
+- readme example
+
+
+<a name="v1.1.0"></a>
+## [v1.1.0] - 2020-06-26
+### Added
+- upgrade freezed dependency
+
+
+<a name="v1.0.0"></a>
+## [v1.0.0] - 2020-05-05
 ### Added
 - add flutter_hooks example.
 - add docs for state predicates
@@ -87,8 +114,12 @@ empty is no longer supported because it is not considered a valid remote state.
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.0.0...HEAD
-[1.0.0]: https://github.com/chimon2000/remote_state/compare/v0.19.0...1.0.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.4.0...HEAD
+[1.4.0]: https://github.com/chimon2000/remote_state/compare/v1.3.0...1.4.0
+[v1.3.0]: https://github.com/chimon2000/remote_state/compare/v1.2.0...v1.3.0
+[v1.2.0]: https://github.com/chimon2000/remote_state/compare/v1.1.0...v1.2.0
+[v1.1.0]: https://github.com/chimon2000/remote_state/compare/v1.0.0...v1.1.0
+[v1.0.0]: https://github.com/chimon2000/remote_state/compare/v0.19.0...v1.0.0
 [v0.19.0]: https://github.com/chimon2000/remote_state/compare/v0.18.0...v0.19.0
 [v0.18.0]: https://github.com/chimon2000/remote_state/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/chimon2000/remote_state/compare/v0.16.0...v0.17.0

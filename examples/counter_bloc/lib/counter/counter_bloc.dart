@@ -24,47 +24,24 @@ class CounterBloc extends Bloc<CounterEvent, RemoteState<int>> {
   }
 
   Future<RemoteState<int>> onLoad() async {
-    RemoteState<int> state;
+    RemoteState<int> state = RemoteState.loading();
 
-    try {
-      state = RemoteState.loading();
+    state = await RemoteState.guard(() => _counterClient.getCount());
 
-      var count = await _counterClient.getCount();
-
-      state = RemoteState.success(count);
-    } catch (e) {
-      state = RemoteState.error(e);
-    }
     return state;
   }
 
   Future<RemoteState<int>> onIncrement() async {
-    RemoteState<int> state;
+    RemoteState<int> state =
+        await RemoteState.guard(() => _counterClient.increment());
 
-    try {
-      state = RemoteState.loading();
-
-      var count = await _counterClient.increment();
-
-      state = RemoteState.success(count);
-    } catch (e) {
-      state = RemoteState.error(e);
-    }
     return state;
   }
 
   Future<RemoteState<int>> onDecrement() async {
-    RemoteState<int> state;
+    RemoteState<int> state =
+        await RemoteState.guard(() => _counterClient.decrement());
 
-    try {
-      state = RemoteState.loading();
-
-      var count = await _counterClient.decrement();
-
-      state = RemoteState.success(count);
-    } catch (e) {
-      state = RemoteState.error(e);
-    }
     return state;
   }
 
