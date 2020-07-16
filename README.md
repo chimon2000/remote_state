@@ -12,7 +12,7 @@ Tools for mapping data from remote sources in Dart, similar to Elm's RemoteData:
 
 ## Slaying a UI Antipattern with Flutter.
 
-Library inspired by a blog post by [Kris Jenkins](https://twitter.com/krisajenkins) about [How Elm slays a UI antipattern](http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html).
+Library inspired by a blog post by [Kris Jenkins](https://twitter.com/krisajenkins) about [How Elm slays a UI antipattern](https://bit.ly/3j4HFzy).
 
 ## What problem does this package solve?
 
@@ -201,7 +201,7 @@ The `maybeWhen` method is the equivalent of `when` without the destructuring.
 
 - [Slaying a UI Antipattern with Web Components (and TypeScript)](https://bendyworks.com/blog/slaying-a-ui-antipattern-with-web-components-and-typescript)
 
-- [How Elm Slays a UI Antipattern](http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html)
+- [How Elm Slays a UI Antipattern](https://bit.ly/3j4HFzy)
 
 - [Slaying a UI Antipattern with Angular](https://medium.com/@joanllenas/slaying-a-ui-antipattern-with-angular-4c7536fafc54)
 
