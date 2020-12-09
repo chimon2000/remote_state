@@ -14,7 +14,7 @@ do
     exit 1
     fi
     cd $workingDirectory
-    version=$(pubver bump $version)
+    version=$(cider bump $version)
     cd -
     git-chglog --next-tag $version -o $workingDirectory/CHANGELOG.md
     exit
