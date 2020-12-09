@@ -15,6 +15,7 @@ do
     fi
     cd $workingDirectory
     version=$(cider bump $version)
+    version=$(cider version)
     cd -
     git-chglog --next-tag $version -o $workingDirectory/CHANGELOG.md
     exit
