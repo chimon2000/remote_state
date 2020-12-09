@@ -2,8 +2,22 @@
 ## [Unreleased]
 
 
-<a name="1.4.0"></a>
-## [1.4.0] - 2020-07-12
+<a name="v1.5.0"></a>
+### Fixed
+- get current version
+- use cider to manage changelog
+- meta not defined as dep
+
+## [v1.5.0] - 2020-12-09
+### Chore
+- update dependencies
+
+### Fixed
+- remove insecure links
+
+
+<a name="v1.4.0"></a>
+## [v1.4.0] - 2020-07-12
 ### Added
 - update docs
 - add tests
@@ -114,8 +128,9 @@ empty is no longer supported because it is not considered a valid remote state.
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.4.0...HEAD
-[1.4.0]: https://github.com/chimon2000/remote_state/compare/v1.3.0...1.4.0
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.5.0...HEAD
+[v1.5.0]: https://github.com/chimon2000/remote_state/compare/v1.4.0...v1.5.0
+[v1.4.0]: https://github.com/chimon2000/remote_state/compare/v1.3.0...v1.4.0
 [v1.3.0]: https://github.com/chimon2000/remote_state/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/chimon2000/remote_state/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/chimon2000/remote_state/compare/v1.0.0...v1.1.0
