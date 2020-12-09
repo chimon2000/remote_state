@@ -1,7 +1,7 @@
 library remote_state;
 
 import 'dart:async';
-
+import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'remote_state.freezed.dart';

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of remote_state;
 
@@ -9,23 +9,28 @@ part of remote_state;
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RemoteStateTearOff {
   const _$RemoteStateTearOff();
 
+// ignore: unused_element
   _Initial<T> initial<T>() {
     return _Initial<T>();
   }
 
+// ignore: unused_element
   _Loading<T> loading<T>() {
     return _Loading<T>();
   }
 
+// ignore: unused_element
   _Success<T> success<T>(T value) {
     return _Success<T>(
       value,
     );
   }
 
+// ignore: unused_element
   _Error<T> error<T>([dynamic error, StackTrace stackTrace]) {
     return _Error<T>(
       error,
@@ -34,48 +39,52 @@ class _$RemoteStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RemoteState = _$RemoteStateTearOff();
 
+/// @nodoc
 mixin _$RemoteState<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result success(T value),
-    @required Result error(dynamic error, StackTrace stackTrace),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult success(T value),
+    @required TResult error(dynamic error, StackTrace stackTrace),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result success(T value),
-    Result error(dynamic error, StackTrace stackTrace),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult success(T value),
+    TResult error(dynamic error, StackTrace stackTrace),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial<T> value),
-    @required Result loading(_Loading<T> value),
-    @required Result success(_Success<T> value),
-    @required Result error(_Error<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial<T> value),
+    @required TResult loading(_Loading<T> value),
+    @required TResult success(_Success<T> value),
+    @required TResult error(_Error<T> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial<T> value),
-    Result loading(_Loading<T> value),
-    Result success(_Success<T> value),
-    Result error(_Error<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial<T> value),
+    TResult loading(_Loading<T> value),
+    TResult success(_Success<T> value),
+    TResult error(_Error<T> value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $RemoteStateCopyWith<T, $Res> {
   factory $RemoteStateCopyWith(
           RemoteState<T> value, $Res Function(RemoteState<T>) then) =
       _$RemoteStateCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$RemoteStateCopyWithImpl<T, $Res>
     implements $RemoteStateCopyWith<T, $Res> {
   _$RemoteStateCopyWithImpl(this._value, this._then);
@@ -85,12 +94,14 @@ class _$RemoteStateCopyWithImpl<T, $Res>
   final $Res Function(RemoteState<T>) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<T, $Res> {
   factory _$InitialCopyWith(
           _Initial<T> value, $Res Function(_Initial<T>) then) =
       __$InitialCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
     implements _$InitialCopyWith<T, $Res> {
   __$InitialCopyWithImpl(_Initial<T> _value, $Res Function(_Initial<T>) _then)
@@ -100,6 +111,7 @@ class __$InitialCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
   _Initial<T> get _value => super._value as _Initial<T>;
 }
 
+/// @nodoc
 class _$_Initial<T> implements _Initial<T> {
   _$_Initial();
 
@@ -166,11 +178,11 @@ class _$_Initial<T> implements _Initial<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result success(T value),
-    @required Result error(dynamic error, StackTrace stackTrace),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult success(T value),
+    @required TResult error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -181,12 +193,12 @@ class _$_Initial<T> implements _Initial<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result success(T value),
-    Result error(dynamic error, StackTrace stackTrace),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult success(T value),
+    TResult error(dynamic error, StackTrace stackTrace),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -197,11 +209,11 @@ class _$_Initial<T> implements _Initial<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial<T> value),
-    @required Result loading(_Loading<T> value),
-    @required Result success(_Success<T> value),
-    @required Result error(_Error<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial<T> value),
+    @required TResult loading(_Loading<T> value),
+    @required TResult success(_Success<T> value),
+    @required TResult error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -212,12 +224,12 @@ class _$_Initial<T> implements _Initial<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial<T> value),
-    Result loading(_Loading<T> value),
-    Result success(_Success<T> value),
-    Result error(_Error<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial<T> value),
+    TResult loading(_Loading<T> value),
+    TResult success(_Success<T> value),
+    TResult error(_Error<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -231,12 +243,14 @@ abstract class _Initial<T> implements RemoteState<T> {
   factory _Initial() = _$_Initial<T>;
 }
 
+/// @nodoc
 abstract class _$LoadingCopyWith<T, $Res> {
   factory _$LoadingCopyWith(
           _Loading<T> value, $Res Function(_Loading<T>) then) =
       __$LoadingCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class __$LoadingCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
     implements _$LoadingCopyWith<T, $Res> {
   __$LoadingCopyWithImpl(_Loading<T> _value, $Res Function(_Loading<T>) _then)
@@ -246,6 +260,7 @@ class __$LoadingCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
   _Loading<T> get _value => super._value as _Loading<T>;
 }
 
+/// @nodoc
 class _$_Loading<T> implements _Loading<T> {
   _$_Loading();
 
@@ -312,11 +327,11 @@ class _$_Loading<T> implements _Loading<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result success(T value),
-    @required Result error(dynamic error, StackTrace stackTrace),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult success(T value),
+    @required TResult error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -327,12 +342,12 @@ class _$_Loading<T> implements _Loading<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result success(T value),
-    Result error(dynamic error, StackTrace stackTrace),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult success(T value),
+    TResult error(dynamic error, StackTrace stackTrace),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -343,11 +358,11 @@ class _$_Loading<T> implements _Loading<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial<T> value),
-    @required Result loading(_Loading<T> value),
-    @required Result success(_Success<T> value),
-    @required Result error(_Error<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial<T> value),
+    @required TResult loading(_Loading<T> value),
+    @required TResult success(_Success<T> value),
+    @required TResult error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -358,12 +373,12 @@ class _$_Loading<T> implements _Loading<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial<T> value),
-    Result loading(_Loading<T> value),
-    Result success(_Success<T> value),
-    Result error(_Error<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial<T> value),
+    TResult loading(_Loading<T> value),
+    TResult success(_Success<T> value),
+    TResult error(_Error<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
@@ -377,6 +392,7 @@ abstract class _Loading<T> implements RemoteState<T> {
   factory _Loading() = _$_Loading<T>;
 }
 
+/// @nodoc
 abstract class _$SuccessCopyWith<T, $Res> {
   factory _$SuccessCopyWith(
           _Success<T> value, $Res Function(_Success<T>) then) =
@@ -384,6 +400,7 @@ abstract class _$SuccessCopyWith<T, $Res> {
   $Res call({T value});
 }
 
+/// @nodoc
 class __$SuccessCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
     implements _$SuccessCopyWith<T, $Res> {
   __$SuccessCopyWithImpl(_Success<T> _value, $Res Function(_Success<T>) _then)
@@ -402,6 +419,7 @@ class __$SuccessCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$_Success<T> implements _Success<T> {
   _$_Success(this.value) : assert(value != null);
 
@@ -479,11 +497,11 @@ class _$_Success<T> implements _Success<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result success(T value),
-    @required Result error(dynamic error, StackTrace stackTrace),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult success(T value),
+    @required TResult error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -494,12 +512,12 @@ class _$_Success<T> implements _Success<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result success(T value),
-    Result error(dynamic error, StackTrace stackTrace),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult success(T value),
+    TResult error(dynamic error, StackTrace stackTrace),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (success != null) {
@@ -510,11 +528,11 @@ class _$_Success<T> implements _Success<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial<T> value),
-    @required Result loading(_Loading<T> value),
-    @required Result success(_Success<T> value),
-    @required Result error(_Error<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial<T> value),
+    @required TResult loading(_Loading<T> value),
+    @required TResult success(_Success<T> value),
+    @required TResult error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -525,12 +543,12 @@ class _$_Success<T> implements _Success<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial<T> value),
-    Result loading(_Loading<T> value),
-    Result success(_Success<T> value),
-    Result error(_Error<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial<T> value),
+    TResult loading(_Loading<T> value),
+    TResult success(_Success<T> value),
+    TResult error(_Error<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (success != null) {
@@ -547,12 +565,14 @@ abstract class _Success<T> implements RemoteState<T> {
   _$SuccessCopyWith<T, _Success<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ErrorCopyWith<T, $Res> {
   factory _$ErrorCopyWith(_Error<T> value, $Res Function(_Error<T>) then) =
       __$ErrorCopyWithImpl<T, $Res>;
   $Res call({dynamic error, StackTrace stackTrace});
 }
 
+/// @nodoc
 class __$ErrorCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
     implements _$ErrorCopyWith<T, $Res> {
   __$ErrorCopyWithImpl(_Error<T> _value, $Res Function(_Error<T>) _then)
@@ -573,6 +593,7 @@ class __$ErrorCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$_Error<T> implements _Error<T> {
   _$_Error([this.error, this.stackTrace]);
 
@@ -657,11 +678,11 @@ class _$_Error<T> implements _Error<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result success(T value),
-    @required Result error(dynamic error, StackTrace stackTrace),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult success(T value),
+    @required TResult error(dynamic error, StackTrace stackTrace),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -672,12 +693,12 @@ class _$_Error<T> implements _Error<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result success(T value),
-    Result error(dynamic error, StackTrace stackTrace),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult loading(),
+    TResult success(T value),
+    TResult error(dynamic error, StackTrace stackTrace),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
@@ -688,11 +709,11 @@ class _$_Error<T> implements _Error<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial<T> value),
-    @required Result loading(_Loading<T> value),
-    @required Result success(_Success<T> value),
-    @required Result error(_Error<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial<T> value),
+    @required TResult loading(_Loading<T> value),
+    @required TResult success(_Success<T> value),
+    @required TResult error(_Error<T> value),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -703,12 +724,12 @@ class _$_Error<T> implements _Error<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial<T> value),
-    Result loading(_Loading<T> value),
-    Result success(_Success<T> value),
-    Result error(_Error<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial<T> value),
+    TResult loading(_Loading<T> value),
+    TResult success(_Success<T> value),
+    TResult error(_Error<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
