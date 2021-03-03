@@ -1,29 +1,30 @@
 name: Build & test
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
     env:
       working-directory: ./packages/remote_state
     container:
-      image:  google/dart:latest
+      image: google/dart:latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: pub get
-      working-directory: ${{env.working-directory}}
-    - name: Run tests
-      run: pub run test_coverage
-      working-directory: ${{env.working-directory}}
-    - uses: codecov/codecov-action@v1
-      name: Publish coverage
-      with:
-        file: ${{env.working-directory}}/coverage/lcov.info 
-
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pub get
+        working-directory: ${{env.working-directory}}
+      - name: Run tests
+        run: pub run test --coverage coverage
+        working-directory: ${{env.working-directory}}
+      - name: Collect test coverage
+        run: pub run coverage:format_coverage -i coverage/test/remote_state_test.dart.vm.json  --lcov -o coverage/lcov.info
+        working-directory: ${{env.working-directory}}
+      - uses: codecov/codecov-action@v1
+        name: Publish coverage
+        with:
+          file: ${{env.working-directory}}/coverage/lcov.info
