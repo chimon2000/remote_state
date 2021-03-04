@@ -8,13 +8,13 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  provider: ^4.0.5
-  state_notifier: ^0.4.0
-  flutter_state_notifier: ^0.4.1
   flutter:
     sdk: flutter
   remote_state:
     path: ../../packages/remote_state
+  flutter_state_notifier: ^0.7.0
+  provider: ^5.0.0-nullsafety.5
+  state_notifier: ^0.7.0
 
 dev_dependencies:
   flutter_test:

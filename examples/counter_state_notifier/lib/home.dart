@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:remote_state/remote_state.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     var counterNotifier = Provider.of<CounterNotifier>(context);
     var counterState = Provider.of<RemoteState<int>>(context);
 
-    var textStyle = Theme.of(context).textTheme.display1;
+    var textStyle = Theme.of(context).textTheme.headline4;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(

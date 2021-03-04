@@ -8,11 +8,11 @@ import 'package:state_notifier/state_notifier.dart';
 /// See also:
 ///   * [StateNotifier]
 T useStateNotifier<T>(StateNotifier<T> notifier) {
-  return Hook.use(_StateNotifierHook(notifier));
+  return use(_StateNotifierHook(notifier));
 }
 
 class _StateNotifierHook<T> extends Hook<T> {
-  final StateNotifier notifier;
+  final StateNotifier? notifier;
 
   const _StateNotifierHook(this.notifier) : assert(notifier != null);
 
@@ -21,22 +21,21 @@ class _StateNotifierHook<T> extends Hook<T> {
 }
 
 class _StateNotifierStateHook<T> extends HookState<T, _StateNotifierHook<T>> {
-  T state;
-
-  void Function() removeListener;
+  late T state;
+  late void Function() removeListener;
 
   @override
   void initHook() {
     super.initHook();
-    removeListener = hook.notifier.addListener(_listener);
+    removeListener = hook.notifier!.addListener(_listener);
   }
 
   @override
-  void didUpdateHook(_StateNotifierHook oldHook) {
+  void didUpdateHook(_StateNotifierHook<T> oldHook) {
     super.didUpdateHook(oldHook);
     if (hook.notifier != oldHook.notifier) {
       removeListener();
-      hook.notifier.addListener(_listener);
+      hook.notifier!.addListener(_listener);
     }
   }
 
@@ -45,7 +44,7 @@ class _StateNotifierStateHook<T> extends HookState<T, _StateNotifierHook<T>> {
     return state;
   }
 
-  void _listener(T state) {
+  void _listener(dynamic state) {
     setState(() {
       this.state = state;
     });

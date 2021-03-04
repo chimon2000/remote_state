@@ -23,13 +23,12 @@ class ExampleApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     //2. Resolve counter bloc to update state
-    final counterBloc = context.bloc<CounterBloc>();
-    final textStyle = Theme.of(context).textTheme.display1;
+    final textStyle = Theme.of(context).textTheme.headline4;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(
@@ -64,7 +63,7 @@ class HomePage extends StatelessWidget {
             child: FloatingActionButton(
               child: Icon(Icons.add),
               //4. Perform increment action
-              onPressed: () => counterBloc.increment(),
+              onPressed: () => context.read()<CounterBloc>().increment(),
             ),
           ),
           Padding(
@@ -72,7 +71,7 @@ class HomePage extends StatelessWidget {
             child: FloatingActionButton(
               child: Icon(Icons.remove),
               //5. Perform decrement action
-              onPressed: () => counterBloc.decrement(),
+              onPressed: () => context.read()<CounterBloc>().decrement(),
             ),
           ),
         ],
