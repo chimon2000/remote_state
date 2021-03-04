@@ -2,9 +2,10 @@ name: counter_state_notifier
 version: 1.0.0+1
 homepage: https://github.com/chimon2000/remote_state
 author: Ryan Edge <ryan.c.edge@outlook.com>
+publish_to: 'none'
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   provider: ^4.0.5

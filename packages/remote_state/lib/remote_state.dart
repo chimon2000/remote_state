@@ -17,7 +17,9 @@ part 'remote_state.freezed.dart';
 ///
 /// [How to fix a bad user interface](https://www.scotthurff.com/posts/why-your-user-interface-is-awkward-youre-ignoring-the-ui-stack/)
 @freezed
-abstract class RemoteState<T> with _$RemoteState<T> {
+class RemoteState<T> with _$RemoteState<T> {
+  RemoteState._();
+
   /// We haven't asked for the data yet.
   factory RemoteState.initial() = _Initial<T>;
 
@@ -28,7 +30,8 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   factory RemoteState.success(T value) = _Success<T>;
 
   /// We asked, but something went wrong. Here's the error.
-  factory RemoteState.error([dynamic error, StackTrace stackTrace]) = _Error<T>;
+  factory RemoteState.error([Object? error, StackTrace? stackTrace]) =
+      _Error<T>;
 
   /// Defines logic based on the current state.
   ///
@@ -43,11 +46,11 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// [success] determines what to do if the state matches [RemoteState.success]
   ///
   /// [error] determines what to do if the state matches [RemoteState.error]
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result success(T value),
-    @required Result error(dynamic error, StackTrace stackTrace),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T value) success,
+    required TResult Function(Object? error, StackTrace? stackTrace) error,
   });
 
   /// Defines logic based on the current state with a fallback for unhandled states.
@@ -67,12 +70,12 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// [error] determines what to do if the state matches [RemoteState.error]
   ///
   /// [orElse] determines what to do if no match is found
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result success(T value),
-    Result error(dynamic error, StackTrace stackTrace),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T value)? success,
+    TResult Function(Object? error, StackTrace? stackTrace)? error,
+    required TResult orElse(),
   });
 
   /// Achieves the same result as [when] without destructuring.
@@ -88,11 +91,11 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// [success] determines what to do if the state matches [RemoteState.success]
   ///
   /// [error] determines what to do if the state matches [RemoteState.error]
-  Result map<Result extends Object>({
-    @required Result initial(_Initial<T> value),
-    @required Result loading(_Loading<T> value),
-    @required Result success(_Success<T> value),
-    @required Result error(_Error<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(_Loading<T> value) loading,
+    required TResult Function(_Success<T> value) success,
+    required TResult Function(_Error<T> value) error,
   });
 
   /// Achieves the same result as [maybeWhen] without destructuring.
@@ -110,33 +113,29 @@ abstract class RemoteState<T> with _$RemoteState<T> {
   /// [error] determines what to do if the state matches [RemoteState.error]
   ///
   /// [orElse] determines what to do if no match is found
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial<T> value),
-    Result loading(_Loading<T> value),
-    Result success(_Success<T> value),
-    Result error(_Error<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Error<T> value)? error,
+    required TResult orElse(),
   });
 
   /// State-checking predicate. Returns true if we haven't asked for data yet.
   /// Returns true only if [RemoteState] is [RemoteState.initial]
-  @late
-  bool get isInitial => maybeWhen(initial: () => true, orElse: () => false);
+  late bool isInitial = maybeWhen(initial: () => true, orElse: () => false);
 
   /// State-checking predicate. Returns true if we're loading.
   /// Returns true only if [RemoteState] is [RemoteState.loading]
-  @late
-  bool get isLoading => maybeWhen(loading: () => true, orElse: () => false);
+  late bool isLoading = maybeWhen(loading: () => true, orElse: () => false);
 
   /// State-checking predicate. Returns true if we've successfully loaded some data.
   /// Returns true only if [RemoteState] is [RemoteState.success]
-  @late
-  bool get isSuccess => maybeWhen(success: (_) => true, orElse: () => false);
+  late bool isSuccess = maybeWhen(success: (_) => true, orElse: () => false);
 
   ///  State-checking predicate. Returns true if we've failed to load some data.
   /// Returns true only if [RemoteState] is [RemoteState.error]
-  @late
-  bool get isError => maybeWhen(error: (_, __) => true, orElse: () => false);
+  late bool isError = maybeWhen(error: (_, __) => true, orElse: () => false);
 
   /// Convert a [Future] to RemoteState.
   /// Emits [RemoteState.success] if the future completes

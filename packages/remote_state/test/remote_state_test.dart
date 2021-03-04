@@ -42,64 +42,6 @@ void main() {
 
       expect(state.maybeWhen(orElse: () => true, initial: () => false), true);
     });
-
-    test('maybeWhen throws assert error when missing orElse', () {
-      var state = RemoteState.initial();
-
-      expect(() => state.maybeWhen(initial: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(loading: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(success: whenSuccessNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(error: whenErrorNoOp),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.loading();
-
-      expect(() => state.maybeWhen(initial: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(loading: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(success: whenSuccessNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(error: whenErrorNoOp),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.success('');
-
-      expect(() => state.maybeWhen(initial: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(loading: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(success: whenSuccessNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(error: whenErrorNoOp),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.error('');
-
-      expect(() => state.maybeWhen(initial: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(loading: whenNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(success: whenSuccessNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeWhen(error: whenErrorNoOp),
-          throwsA(isA<AssertionError>()));
-    });
   });
 
   group('when', () {
@@ -146,139 +88,6 @@ void main() {
             initial: () => false,
           ),
           true);
-    });
-    test('when throws assert error when missing state', () {
-      var state = RemoteState.initial();
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                loading: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                loading: whenNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                loading: whenNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.success('');
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                loading: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                loading: whenNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                loading: whenNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.error('');
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                loading: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                loading: whenNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                loading: whenNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.loading();
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                loading: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                loading: whenNoOp,
-                error: whenErrorNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.when(
-                success: whenSuccessNoOp,
-                loading: whenNoOp,
-                initial: whenNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
     });
   });
 
@@ -357,58 +166,6 @@ void main() {
           ),
           true);
     });
-
-    test('maybeMap throws assert error when missing orElse', () {
-      var state = RemoteState.initial();
-
-      expect(() => state.maybeMap(initial: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(loading: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(success: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.loading();
-
-      expect(() => state.maybeMap(initial: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(loading: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(success: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.success('');
-
-      expect(() => state.maybeMap(initial: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(loading: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(success: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.maybeMap(error: mapNoOp), throwsA(isA<AssertionError>()));
-
-      state = RemoteState.error('');
-
-      expect(() => state.maybeMap(initial: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(loading: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(() => state.maybeMap(success: mapNoOp),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.maybeMap(error: mapNoOp), throwsA(isA<AssertionError>()));
-    });
   });
 
   group('map', () {
@@ -456,141 +213,6 @@ void main() {
             initial: (_) => false,
           ),
           true);
-    });
-
-    test('map throws assert error when missing state', () {
-      var state = RemoteState.initial();
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                loading: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                loading: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                loading: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.success('');
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                loading: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                loading: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                loading: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.error('');
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                loading: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                loading: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                loading: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      state = RemoteState.loading();
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                loading: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                loading: mapNoOp,
-                error: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
-
-      expect(
-          () => state.map(
-                success: mapNoOp,
-                loading: mapNoOp,
-                initial: mapNoOp,
-              ),
-          throwsA(isA<AssertionError>()));
     });
   });
 
@@ -648,16 +270,44 @@ void main() {
     });
   });
 
+  group('state predicates', () {
+    test('predicates match state', () {
+      var state = RemoteState.success('');
+      expect(state.isSuccess, true);
+      expect(state.isError, false);
+      expect(state.isLoading, false);
+      expect(state.isInitial, false);
+
+      state = RemoteState.loading();
+      expect(state.isSuccess, false);
+      expect(state.isError, false);
+      expect(state.isLoading, true);
+      expect(state.isInitial, false);
+
+      state = RemoteState.initial();
+      expect(state.isSuccess, false);
+      expect(state.isError, false);
+      expect(state.isLoading, false);
+      expect(state.isInitial, true);
+
+      state = RemoteState.error();
+      expect(state.isSuccess, false);
+      expect(state.isError, true);
+      expect(state.isLoading, false);
+      expect(state.isInitial, false);
+    });
+  });
+
   group('toString', () {
     test('prints correct match', () {
       expect(RemoteState.success('').toString(),
-          'RemoteState<String>.success(value: , isInitial: false, isLoading: false, isSuccess: true, isError: false)');
+          'RemoteState<String>.success(value: )');
       expect(RemoteState.error('').toString(),
-          'RemoteState<dynamic>.error(error: , stackTrace: null, isInitial: false, isLoading: false, isSuccess: false, isError: true)');
-      expect(RemoteState.loading().toString(),
-          'RemoteState<dynamic>.loading(isInitial: false, isLoading: true, isSuccess: false, isError: false)');
-      expect(RemoteState.initial().toString(),
-          'RemoteState<dynamic>.initial(isInitial: true, isLoading: false, isSuccess: false, isError: false)');
+          'RemoteState<dynamic>.error(error: , stackTrace: null)');
+      expect(
+          RemoteState.loading().toString(), 'RemoteState<dynamic>.loading()');
+      expect(
+          RemoteState.initial().toString(), 'RemoteState<dynamic>.initial()');
     });
   });
 
