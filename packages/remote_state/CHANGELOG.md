@@ -2,12 +2,24 @@
 ## [Unreleased]
 
 
-<a name="v1.5.0"></a>
+<a name="2.0.0"></a>
+## [2.0.0] - 2021-03-04
+### Added
+- migrate examples to null safety
+- migrate to null safety
+
+### Chore
+- update pubspec dart versions
+
 ### Fixed
+- update dependencies & workflow
+- version bump
 - get current version
 - use cider to manage changelog
 - meta not defined as dep
 
+
+<a name="v1.5.0"></a>
 ## [v1.5.0] - 2020-12-09
 ### Chore
 - update dependencies
@@ -128,7 +140,8 @@ empty is no longer supported because it is not considered a valid remote state.
 - flutter dependency remote_state package
 
 
-[Unreleased]: https://github.com/chimon2000/remote_state/compare/1.5.0...HEAD
+[Unreleased]: https://github.com/chimon2000/remote_state/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/chimon2000/remote_state/compare/v1.5.0...2.0.0
 [v1.5.0]: https://github.com/chimon2000/remote_state/compare/v1.4.0...v1.5.0
 [v1.4.0]: https://github.com/chimon2000/remote_state/compare/v1.3.0...v1.4.0
 [v1.3.0]: https://github.com/chimon2000/remote_state/compare/v1.2.0...v1.3.0
