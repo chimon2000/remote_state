@@ -7,14 +7,14 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  bloc:
-  flutter_bloc:
-  provider: ^4.0.5
   flutter:
     sdk: flutter
   remote_state:
     path: ../../packages/remote_state
+  bloc: ^7.0.0-nullsafety.3
   cupertino_icons: ^0.1.2
+  flutter_bloc: ^7.0.0-nullsafety.3
+  provider: ^5.0.0-nullsafety.5
 
 dev_dependencies:
   flutter_test:

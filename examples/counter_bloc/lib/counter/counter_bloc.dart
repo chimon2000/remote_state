@@ -5,8 +5,7 @@ import 'package:remote_state/remote_state.dart';
 class CounterBloc extends Bloc<CounterEvent, RemoteState<int>> {
   var _counterClient = CounterClient();
 
-  @override
-  RemoteState<int> get initialState => RemoteState.initial();
+  CounterBloc() : super(RemoteState.initial());
 
   @override
   Stream<RemoteState<int>> mapEventToState(CounterEvent event) async* {

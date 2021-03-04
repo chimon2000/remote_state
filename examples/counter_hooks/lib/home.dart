@@ -5,7 +5,7 @@ import 'package:counter_hooks/counter/counter_notifier.dart';
 import 'package:counter_hooks/hooks/state_notifier.dart';
 
 class HomePage extends HookWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class HomePage extends HookWidget {
     final counterNotifier = useCounterNotifier();
     var counterState = useStateNotifier(counterNotifier);
 
-    var textStyle = Theme.of(context).textTheme.display1;
+    var textStyle = Theme.of(context).textTheme.headline4;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(

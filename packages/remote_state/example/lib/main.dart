@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+  HomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var textStyle = Theme.of(context).textTheme.display1;
+    var textStyle = Theme.of(context).textTheme.headline4;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(

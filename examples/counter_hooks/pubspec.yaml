@@ -7,9 +7,9 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  flutter_hooks: ^0.9.0
-  state_notifier: ^0.4.0
-  flutter_state_notifier: ^0.4.1
+  flutter_hooks: ^0.16.0
+  state_notifier: ^0.7.0
+  flutter_state_notifier: ^0.7.0
   remote_state:
     path: ../../packages/remote_state
 
