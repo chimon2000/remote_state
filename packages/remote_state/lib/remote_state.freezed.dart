@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of remote_state;
 
@@ -52,6 +53,14 @@ mixin _$RemoteState<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T value)? success,
+    TResult Function(Object? error, StackTrace? stackTrace)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
@@ -66,6 +75,14 @@ mixin _$RemoteState<T> {
     required TResult Function(_Loading<T> value) loading,
     required TResult Function(_Success<T> value) success,
     required TResult Function(_Error<T> value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Error<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,6 +131,7 @@ class __$InitialCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$_Initial<T> extends _Initial<T> {
   _$_Initial() : super._();
 
@@ -124,7 +142,8 @@ class _$_Initial<T> extends _Initial<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial<T>);
   }
 
   @override
@@ -139,6 +158,17 @@ class _$_Initial<T> extends _Initial<T> {
     required TResult Function(Object? error, StackTrace? stackTrace) error,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T value)? success,
+    TResult Function(Object? error, StackTrace? stackTrace)? error,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -169,6 +199,17 @@ class _$_Initial<T> extends _Initial<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Error<T> value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(_Loading<T> value)? loading,
@@ -184,8 +225,8 @@ class _$_Initial<T> extends _Initial<T> {
 }
 
 abstract class _Initial<T> extends RemoteState<T> {
-  _Initial._() : super._();
   factory _Initial() = _$_Initial<T>;
+  _Initial._() : super._();
 }
 
 /// @nodoc
@@ -206,6 +247,7 @@ class __$LoadingCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$_Loading<T> extends _Loading<T> {
   _$_Loading() : super._();
 
@@ -216,7 +258,8 @@ class _$_Loading<T> extends _Loading<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading<T>);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Loading<T>);
   }
 
   @override
@@ -231,6 +274,17 @@ class _$_Loading<T> extends _Loading<T> {
     required TResult Function(Object? error, StackTrace? stackTrace) error,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T value)? success,
+    TResult Function(Object? error, StackTrace? stackTrace)? error,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -261,6 +315,17 @@ class _$_Loading<T> extends _Loading<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Error<T> value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(_Loading<T> value)? loading,
@@ -276,8 +341,8 @@ class _$_Loading<T> extends _Loading<T> {
 }
 
 abstract class _Loading<T> extends RemoteState<T> {
-  _Loading._() : super._();
   factory _Loading() = _$_Loading<T>;
+  _Loading._() : super._();
 }
 
 /// @nodoc
@@ -302,12 +367,16 @@ class __$SuccessCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
     Object? value = freezed,
   }) {
     return _then(_Success<T>(
-      value == freezed ? _value.value : value as T,
+      value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Success<T> extends _Success<T> {
   _$_Success(this.value) : super._();
 
@@ -322,14 +391,14 @@ class _$_Success<T> extends _Success<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Success<T> &&
-            (identical(other.value, value) ||
-                const DeepCollectionEquality().equals(other.value, value)));
+        (other.runtimeType == runtimeType &&
+            other is _Success<T> &&
+            const DeepCollectionEquality().equals(other.value, value));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
   @JsonKey(ignore: true)
   @override
@@ -345,6 +414,17 @@ class _$_Success<T> extends _Success<T> {
     required TResult Function(Object? error, StackTrace? stackTrace) error,
   }) {
     return success(value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T value)? success,
+    TResult Function(Object? error, StackTrace? stackTrace)? error,
+  }) {
+    return success?.call(value);
   }
 
   @override
@@ -375,6 +455,17 @@ class _$_Success<T> extends _Success<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Error<T> value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(_Loading<T> value)? loading,
@@ -390,10 +481,10 @@ class _$_Success<T> extends _Success<T> {
 }
 
 abstract class _Success<T> extends RemoteState<T> {
-  _Success._() : super._();
   factory _Success(T value) = _$_Success<T>;
+  _Success._() : super._();
 
-  T get value => throw _privateConstructorUsedError;
+  T get value;
   @JsonKey(ignore: true)
   _$SuccessCopyWith<T, _Success<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -422,12 +513,16 @@ class __$ErrorCopyWithImpl<T, $Res> extends _$RemoteStateCopyWithImpl<T, $Res>
   }) {
     return _then(_Error<T>(
       error == freezed ? _value.error : error,
-      stackTrace == freezed ? _value.stackTrace : stackTrace as StackTrace?,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace?,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Error<T> extends _Error<T> {
   _$_Error([this.error, this.stackTrace]) : super._();
 
@@ -444,19 +539,16 @@ class _$_Error<T> extends _Error<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Error<T> &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Error<T> &&
+            const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.stackTrace, stackTrace) ||
-                const DeepCollectionEquality()
-                    .equals(other.stackTrace, stackTrace)));
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(error) ^
-      const DeepCollectionEquality().hash(stackTrace);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -472,6 +564,17 @@ class _$_Error<T> extends _Error<T> {
     required TResult Function(Object? error, StackTrace? stackTrace) error,
   }) {
     return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T value)? success,
+    TResult Function(Object? error, StackTrace? stackTrace)? error,
+  }) {
+    return error?.call(this.error, stackTrace);
   }
 
   @override
@@ -502,6 +605,17 @@ class _$_Error<T> extends _Error<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_Loading<T> value)? loading,
+    TResult Function(_Success<T> value)? success,
+    TResult Function(_Error<T> value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(_Loading<T> value)? loading,
@@ -517,11 +631,11 @@ class _$_Error<T> extends _Error<T> {
 }
 
 abstract class _Error<T> extends RemoteState<T> {
-  _Error._() : super._();
   factory _Error([Object? error, StackTrace? stackTrace]) = _$_Error<T>;
+  _Error._() : super._();
 
-  Object? get error => throw _privateConstructorUsedError;
-  StackTrace? get stackTrace => throw _privateConstructorUsedError;
+  Object? get error;
+  StackTrace? get stackTrace;
   @JsonKey(ignore: true)
   _$ErrorCopyWith<T, _Error<T>> get copyWith =>
       throw _privateConstructorUsedError;
