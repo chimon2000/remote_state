@@ -122,19 +122,23 @@ class RemoteState<T> with _$RemoteState<T> {
 
   /// State-checking predicate. Returns true if we haven't asked for data yet.
   /// Returns true only if [RemoteState] is [RemoteState.initial]
-  late bool isInitial = maybeWhen(initial: () => true, orElse: () => false);
+  late final bool isInitial =
+      maybeWhen(initial: () => true, orElse: () => false);
 
   /// State-checking predicate. Returns true if we're loading.
   /// Returns true only if [RemoteState] is [RemoteState.loading]
-  late bool isLoading = maybeWhen(loading: () => true, orElse: () => false);
+  late final bool isLoading =
+      maybeWhen(loading: () => true, orElse: () => false);
 
   /// State-checking predicate. Returns true if we've successfully loaded some data.
   /// Returns true only if [RemoteState] is [RemoteState.success]
-  late bool isSuccess = maybeWhen(success: (_) => true, orElse: () => false);
+  late final bool isSuccess =
+      maybeWhen(success: (_) => true, orElse: () => false);
 
   ///  State-checking predicate. Returns true if we've failed to load some data.
   /// Returns true only if [RemoteState] is [RemoteState.error]
-  late bool isError = maybeWhen(error: (_, __) => true, orElse: () => false);
+  late final bool isError =
+      maybeWhen(error: (_, __) => true, orElse: () => false);
 
   /// Convert a [Future] to RemoteState.
   /// Emits [RemoteState.success] if the future completes
