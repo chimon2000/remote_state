@@ -1,7 +1,6 @@
 name: counter_state_notifier
 version: 1.0.0+1
 homepage: https://github.com/chimon2000/remote_state
-author: Ryan Edge <ryan.c.edge@outlook.com>
 publish_to: 'none'
 
 environment:
@@ -13,7 +12,7 @@ dependencies:
   remote_state:
     path: ../../packages/remote_state
   flutter_state_notifier: ^0.7.0
-  provider: ^5.0.0-nullsafety.5
+  provider: ^6.0.0
   state_notifier: ^0.7.0
 
 dev_dependencies:

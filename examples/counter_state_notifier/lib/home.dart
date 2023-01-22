@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     var counterNotifier = Provider.of<CounterNotifier>(context);
     var counterState = Provider.of<RemoteState<int>>(context);
 
-    var textStyle = Theme.of(context).textTheme.headline4;
+    var textStyle = Theme.of(context).textTheme.headlineMedium;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(
