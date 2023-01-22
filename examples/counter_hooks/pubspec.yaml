@@ -7,7 +7,7 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
-  flutter_hooks: ^0.16.0
+  flutter_hooks: ^0.18.0
   state_notifier: ^0.7.0
   flutter_state_notifier: ^0.7.0
   remote_state:
@@ -15,10 +15,6 @@ dependencies:
 
   flutter:
     sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:

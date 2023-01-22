@@ -13,7 +13,7 @@ class HomePage extends HookWidget {
     final counterNotifier = useCounterNotifier();
     var counterState = useStateNotifier(counterNotifier);
 
-    var textStyle = Theme.of(context).textTheme.headline4;
+    var textStyle = Theme.of(context).textTheme.headlineMedium;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(
