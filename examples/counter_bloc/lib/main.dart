@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //2. Resolve counter bloc to update state
-    final textStyle = Theme.of(context).textTheme.headline4;
+    final textStyle = Theme.of(context).textTheme.headlineMedium;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(

@@ -7,7 +7,6 @@ class CounterBloc extends Bloc<CounterEvent, RemoteState<int>> {
 
   CounterBloc() : super(RemoteState.initial());
 
-  @override
   Stream<RemoteState<int>> mapEventToState(CounterEvent event) async* {
     switch (event) {
       case CounterEvent.load:
