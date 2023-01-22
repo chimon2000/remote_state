@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var textStyle = Theme.of(context).textTheme.headline4;
+    var textStyle = Theme.of(context).textTheme.headlineMedium;
     final fabPadding = EdgeInsets.symmetric(vertical: 5.0);
 
     return Scaffold(
